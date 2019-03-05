@@ -1,29 +1,49 @@
 @charset "utf-8";
 
-thead { color:blue; }
 html{
-	background-color : black;
+	background-color : #A9A9F5 ;
 }
 span.entete{
 	color : white;
 
 }
+
 header{
 	color : green;
+	background-color : black;
 	text-align : center;
 }
-img.ib{
-	background-size: cover;
-	width: 35px;
-	height: 25px;
-}
-#Profil {
-	background-image: url("PROJET_IO2_P7/Site/Profil.png");
-}
 img.head{
-	width : 100px;
-	height : 50px;
+	width : 120px;
+	height : 78px;
+	padding-left: 580px;
 }
 a {
 	text-decoration : none;
+}
+body nav ul.barre{
+	background-color :#A9A9F5;
+	
+	font-size : 20px;
+}
+nav.barrre{
+	text-align : center;
+}
+body nav ul li.listesanspuce{
+	list-style-type : none;
+	display : inline-block;
+	padding : 7px;
+	font-size : 25px;
+	background-color : red;
+}
+body nav ul li.listesanspuce:hover{
+	background-color : black;
+	color : red;
+	transition : 1s;
+}
+footer p{
+	color : SlateGray;
+	text-align : right;
+	font-size : x-small;
+
 }
