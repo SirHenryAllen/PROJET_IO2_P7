@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html{
-	background-color : #CED8F6 ;
+	background-color : #FFF ;
 }
 header{
 	color : green;
@@ -54,8 +54,26 @@ nav > ul::after{
 .sousliste{
 	display : none;
 }
+body > nav > ul li:hover .sousliste{
+	display: inline-block;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	padding: 0px;
+	z-index: 100000;
+}
+.sousliste li{
+	border-bottom : 1px solid #CCC;
+}
+.sousliste li a{
+	padding: 40px 50px;
+	font-size: 13px;
+	color: #222538;
+	width: 270px;
+}
 body > nav{
 	width : 100%;
+	padding : 10px;
 	background-color : #424558;
 }
 body > nav > a{
