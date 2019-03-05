@@ -1,13 +1,8 @@
 @charset "utf-8";
 
 html{
-	background-color : #A9A9F5 ;
+	background-color : #CED8F6 ;
 }
-span.entete{
-	color : white;
-
-}
-
 header{
 	color : green;
 	background-color : black;
@@ -16,34 +11,54 @@ header{
 img.head{
 	width : 120px;
 	height : 78px;
-	padding-left: 580px;
+	padding-left: 600px;
 }
 a {
 	text-decoration : none;
 }
-body nav ul.barre{
-	background-color :#A9A9F5;
-	
-	font-size : 20px;
-}
-nav.barrre{
-	text-align : center;
-}
-body nav ul li.listesanspuce{
-	list-style-type : none;
-	display : inline-block;
-	padding : 7px;
-	font-size : 25px;
-	background-color : red;
-}
-body nav ul li.listesanspuce:hover{
-	background-color : black;
-	color : red;
-	transition : 1s;
+body{
+	font-family :Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	margin: 0px;
+	padding: 0px;
+
 }
 footer p{
 	color : SlateGray;
 	text-align : right;
 	font-size : x-small;
-
+}
+form.formulaire{
+	text-align : right;
+	padding-top:15px;
+}
+body > nav > ul{
+	margin : 0px;
+	padding: 0px;
+}
+body > nav > ul > li{
+	float: left;
+	position: relative;
+}
+body > nav > ul > li > a{
+	padding: 20px 30px;
+	color: white;
+}
+nav li{
+	list-style-type: none;
+}
+nav > ul::after{
+	content:"";
+	display: block;
+	clear: both;
+}
+.sousliste{
+	display : none;
+}
+body > nav{
+	width : 100%;
+	background-color : #424558;
+}
+body > nav > a{
+	display: inline-block;
+	text-decoration: none;
 }
