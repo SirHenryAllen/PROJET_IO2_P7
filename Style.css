@@ -11,7 +11,7 @@ header{
 img.head{
 	width : 120px;
 	height : 78px;
-	padding-left: 600px;
+	padding-left: 47%;
 }
 a {
 	text-decoration : none;
@@ -62,13 +62,17 @@ body > nav > ul li:hover .sousliste{
 	padding: 0px;
 	z-index: 100000;
 }
+nav ul li:hover{
+	background-color : #F8032F; /*couleur de la section de el barre*/
+	
+}
 .sousliste li{
 	border-bottom : 1px solid #CCC;
 }
 .sousliste li a{
 	padding: 15px 30px;
 	font-size: 13px;
-	color: white;
+	color: #F8032F;
 	background-color : black;
 	width: 270px;
 }
