@@ -43,6 +43,7 @@ body > nav> ul{
 body > nav > ul > li{
 	float: left;
 	position: relative;
+
 }
 body > nav > ul > li > a{
 	padding: 20px 30px;
@@ -70,7 +71,7 @@ body > nav > ul li:hover .sousliste{
 }
 nav ul li:hover{
 	background-color : #F8032F; /*couleur de la section de el barre*/
-	
+	color: white;
 }
 .sousliste li{
 	border-bottom : 1px solid #F8032F;
@@ -85,11 +86,21 @@ nav ul li:hover{
 }
 body > nav{
 	width : 100%;
-	background-color : #424558;
+	background-color : #3E4644;
+	
 }
 body > nav a{
 	display: inline-block;
 	text-decoration: none;
+}
+.list-Moncompte{
+	float: right;
+}
+#pdp{
+	width: 20px;
+	height:20px ;
+	margin-right: 10px;
+	
 }
 .Acceuil{
 	background-color : yellow;
