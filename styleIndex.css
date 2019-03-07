@@ -1,11 +1,14 @@
 @charset "utf-8";
 
 html{
-	background-color : #FFF ;
+	margin : 0;
+	padding : 0;
+	background: url(bg1.jpg) no-repeat center fixed;
+	background-size : cover;
 }
 header{
 	color : green;
-	background-color : black;
+	background-color : none;
 	text-align : center;
 }
 img.head{
@@ -31,16 +34,20 @@ form.formulaire{
 	text-align : right;
 	padding-top:15px;
 }
-body > nav > ul{
+body > nav> ul{
 	margin : 0px;
 	padding: 0px;
+	text-align: center;
+
 }
 body > nav > ul > li{
 	float: left;
 	position: relative;
+
 }
 body > nav > ul > li > a{
 	padding: 20px 30px;
+	margin: 0 30px;
 	color: white;
 }
 nav li{
@@ -64,37 +71,67 @@ body > nav > ul li:hover .sousliste{
 }
 nav ul li:hover{
 	background-color : #F8032F; /*couleur de la section de el barre*/
-	
+	color: white;
 }
 .sousliste li{
-	border-bottom : 1px solid #CCC;
+	border-bottom : 1px solid #F8032F;
+	width: 100%;
 }
 .sousliste li a{
-	padding: 15px 30px;
 	font-size: 13px;
 	color: #F8032F;
 	background-color : black;
-	width: 270px;
+	width:240px;
+	padding: 15px 10px;
 }
 body > nav{
 	width : 100%;
+	position: fixed;
+	background-color : #3E4644;
 	
-	background-color : #424558;
 }
 body > nav a{
 	display: inline-block;
 	text-decoration: none;
 }
+.list-Moncompte{
+	float: right;
+}
+#pdp{
+	width: 20px;
+	height:20px ;
+	margin-right: 10px;
+
+}
 .Acceuil{
 	background-color : yellow;
+	width: 80%;
+	height: 380px;
+	margin-left:10%;
+}
+body > div.Acceuil div{
+	display: inline-block;
+	width: 49%;
+	height: 300px;
 }
 .Sousbloc1{
 	background-color: green;
-	text-align : ;
+	margin-left:1%;
+	height:;
+}
+.Sousbloc1 p{
+	padding-left: 15px;
+	padding-bottom : 20px;
 }
 .Sousbloc2{
 	background-color: SlateGray;
-	width : 40%;
-	height : 60px;
-	text-align : center;
+	vertical-align: top;
+}
+.Sousbloc2 p{
+	
+	padding-left: 15px;
+}
+#Vignetteacceuil h4{
+	margin : 20px;
+	padding-top: 20px;
 }
