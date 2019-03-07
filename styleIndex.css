@@ -86,6 +86,7 @@ nav ul li:hover{
 }
 body > nav{
 	width : 100%;
+	position: fixed;
 	background-color : #3E4644;
 	
 }
@@ -100,12 +101,12 @@ body > nav a{
 	width: 20px;
 	height:20px ;
 	margin-right: 10px;
-	
+
 }
 .Acceuil{
 	background-color : yellow;
 	width: 80%;
-	height: 750px;
+	height: 380px;
 	margin-left:10%;
 }
 body > div.Acceuil div{
@@ -125,8 +126,6 @@ body > div.Acceuil div{
 .Sousbloc2{
 	background-color: SlateGray;
 	vertical-align: top;
-
-
 }
 .Sousbloc2 p{
 	
