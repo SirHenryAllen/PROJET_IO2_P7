@@ -51,13 +51,19 @@
         </div>
         <div class="Acceuil">
         	<h2>Toute la sélection</h2>
+        	<h3>Filtrer par : </h3>
 
         	<div class="Filtres Jeux">
-        		<input type="checkbox" name="valider" value="" unchecked>
+        		<input type="checkbox" name="valider" value="1" checked> Date de sortie
         		<select name="croissant" size="1">
-        			<option value="1"> Date croissante </option>
-        			<option value="2"> Date décroissante </option>
+        			<option value="1">plus anciennce</option>
+        			<option value="2">plus récente</option>
         		</select> 
+        		<input type="checkbox" name="valider" value="2" checked> Note
+        		<select name="date" size="1">
+        			<option value="1">meilleur</option>
+        			<option value="2">pire</option>
+        		</select>
         	</div>
         	<div class="liste Jeux">
         		<ul>
