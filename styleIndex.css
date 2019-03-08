@@ -84,6 +84,11 @@ nav ul li:hover{
 	width:240px;
 	padding: 15px 10px;
 }
+.sousliste li a:hover{
+	background-color: red;
+	color: black;
+	border: 1px solid black;
+}
 body > nav{
 	width : 100%;
 	position: fixed;
@@ -108,8 +113,8 @@ body > nav a{
 
 }
 #home{
-	width: 20px;
-	height:20px ;
+	width: 45px;
+	height:30px ;
 	margin-right: 10px;
 
 }
