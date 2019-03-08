@@ -17,18 +17,18 @@ body{
 	padding: 0px;
 
 }
-body > nav> ul{
+body.barre > nav> ul{
 	margin : 0px;
 	padding: 0px;
 	text-align: center;
 
 }
-body > nav > ul > li{
+body.barre > nav > ul > li{
 	float: left;
 	position: relative;
 
 }
-body > nav > ul > li > a{
+body.barre > nav > ul > li > a{
 	padding: 15px 23px;
 	margin: 0 30px;
 	color: white;
@@ -44,7 +44,7 @@ nav > ul::after{
 .sousliste{
 	display : none;
 }
-body > nav > ul li:hover .sousliste{
+body.barre > nav > ul li:hover .sousliste{
 	display: inline-block;
 	position: absolute;
 	top: 100%;
@@ -72,13 +72,13 @@ nav ul li:hover{
 	color: black;
 	border: 1px solid black;
 }
-body > nav{
+body.barre > nav{
 	width : 100%;
 	position: fixed;
 	background-color : #3E4644;
 	
 }
-body > nav a{
+body.barre > nav a{
 	display: inline-block;
 	text-decoration: none;
 }
@@ -100,4 +100,10 @@ body > nav a{
 	height:  20px;
 	margin-right: 10px;
 
+}
+ul.debut{
+	margin-left: 50px;
+}
+h4.rappel{
+	margin-left: 75px;
 }

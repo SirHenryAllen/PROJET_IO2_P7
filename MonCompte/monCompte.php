@@ -5,7 +5,7 @@
 		<title>Se connecter aux 80's</title>
 		<link rel="stylesheet" href="styleMonCompte.css">
 	</head>
-	<body>
+	<body class="barre">
 		<nav>
 			<ul>
 				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
@@ -42,15 +42,22 @@
 				</li>		
 			</ul>
 		</nav>
-		<div>
+	</body>
+	<body class="sansbarre">
+		<div class="seco">
 			<hr/>
 			<ul>
 				<li><h3>Se connecter</h3></li>
 			</ul>
 			<hr/>
-				<h1>Vous ne pourrez vous connecter à votre compte que si vous êtes bien inscrit</h1>
+			<ul class="debut">
+				<li><h3>Se connecter</h3></li>
+			</ul>
 			<hr/>
-
+			<h4 class="rappel">Vous ne pourrez vous connecter à votre compte que si vous êtes bien inscrit</h4>
+			<hr/>
+			<br/>
+			
 		</div>
 	</body>
 
