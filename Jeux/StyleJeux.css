@@ -4,18 +4,8 @@ html{
 	margin : 0;
 	padding : 0;
 	background: url(../Images_CSS/backgroundJeux.jpg) no-repeat center fixed;
-	background-size : cover;
 }
-header{
-	color : green;
-	background-color : none;
-	text-align : center;
-}
-img.head{
-	width : 120px;
-	height : 78px;
-	padding-left: 47%;
-}
+
 a {
 	text-decoration : none;
 }
@@ -24,15 +14,6 @@ body{
 	margin: 0px;
 	padding: 0px;
 
-}
-footer p{
-	color : SlateGray;
-	text-align : right;
-	font-size : x-small;
-}
-form.formulaire{
-	text-align : right;
-	padding-top:15px;
 }
 body > nav> ul{
 	margin : 0px;
@@ -109,40 +90,36 @@ body > nav a{
 
 }
 #home{
-	width: 45px;
-	height:30px ;
+	width: 30px;
+	height:20px ;
 	margin-right: 10px;
 
 }
-.Acceuil{
-	background-color : yellow;
+div.form > form.formulaire{
+	text-align : right;
+	padding-top:15px;
+}
+
+body > div.Acceuil{
+	background-color : #7C008A;
 	width: 80%;
 	height: 380px;
-	margin-left:10%;
+	margin-top: 100px;
+	margin-left: 10%;
 }
-body > div.Acceuil div{
-	display: inline-block;
-	width: 49%;
-	height: 300px;
+body >div.Acceuil h2{
+	text-align : center;
 }
-.Sousbloc1{
-	background-color: green;
-	margin-left:1%;
-	height:;
+.Acceuil div.listej {
+	background-image : url("../Images_CSS/catalogue.png");
+	color: #EEB600;
+	width: 90%;
+	margin-left : 5%;
+	padding: 10px 0px;
+	height: 70%;
 }
-.Sousbloc1 p{
-	padding-left: 15px;
-	padding-bottom : 20px;
-}
-.Sousbloc2{
-	background-color: SlateGray;
-	vertical-align: top;
-}
-.Sousbloc2 p{
-	
-	padding-left: 15px;
-}
-#Vignetteacceuil h4{
-	margin : 20px;
-	padding-top: 20px;
+.Acceuil div.listej ul{
+	text-align : center
+	vertical-align: left;
+	margin-left: 20%;
 }
