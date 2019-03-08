@@ -1,9 +1,8 @@
 @charset "utf-8";
-
 html{
 	margin : 0;
 	padding : 0;
-	background: url(Images_CSS/background.jpg) no-repeat center fixed;
+	background: url(trip.jpg) no-repeat center fixed;
 	background-size : cover;
 }
 header{
@@ -46,7 +45,7 @@ body > nav > ul > li{
 
 }
 body > nav > ul > li > a{
-	padding: 20px 30px;
+	padding: 15px 23px;
 	margin: 0 30px;
 	color: white;
 }
@@ -60,6 +59,11 @@ nav > ul::after{
 }
 .sousliste{
 	display : none;
+}
+.sousliste li a:hover{
+	color: black;
+	background-color:#F8032F;
+	border : 1px solid black;
 }
 body > nav > ul li:hover .sousliste{
 	display: inline-block;
@@ -106,6 +110,7 @@ body > nav a{
 	float: left;
 
 }
+
 #pdp{
 	width: 20px;
 	height:20px ;
@@ -114,7 +119,7 @@ body > nav a{
 }
 #home{
 	width: 30px;
-	height:20px ;
+	height:  20px;
 	margin-right: 10px;
 
 }

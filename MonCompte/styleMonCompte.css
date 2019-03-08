@@ -1,11 +1,13 @@
-@charset "utf-8";
-
 html{
-	margin : 0;
-	padding : 0;
-	background: url(../Images_CSS/backgroundJeux.jpg) no-repeat center fixed;
+	margin: 0;
+	margin: 0;
+	background-color: grey;
 }
-
+img.head{
+	width : 120px;
+	height : 78px;
+	padding-left: 47%;
+}
 a {
 	text-decoration : none;
 }
@@ -15,18 +17,18 @@ body{
 	padding: 0px;
 
 }
-body > nav> ul{
+body.barre > nav> ul{
 	margin : 0px;
 	padding: 0px;
 	text-align: center;
 
 }
-body > nav > ul > li{
+body.barre > nav > ul > li{
 	float: left;
 	position: relative;
 
 }
-body > nav > ul > li > a{
+body.barre > nav > ul > li > a{
 	padding: 15px 23px;
 	margin: 0 30px;
 	color: white;
@@ -42,7 +44,7 @@ nav > ul::after{
 .sousliste{
 	display : none;
 }
-body > nav > ul li:hover .sousliste{
+body.barre > nav > ul li:hover .sousliste{
 	display: inline-block;
 	position: absolute;
 	top: 100%;
@@ -54,10 +56,9 @@ nav ul li:hover{
 	background-color : #F8032F; /*couleur de la section de el barre*/
 	color: white;
 }
-.sousliste li a:hover{
-	background-color: red;
-	color: black;
-	border: 1px solid black;
+.sousliste li{
+	border-bottom : 1px solid #F8032F;
+	width: 100%;
 }
 .sousliste li a{
 	font-size: 13px;
@@ -67,17 +68,17 @@ nav ul li:hover{
 	padding: 15px 10px;
 }
 .sousliste li a:hover{
+	background-color: red;
 	color: black;
-	background-color:#F8032F;
-	border : 1px solid black;
+	border: 1px solid black;
 }
-body > nav{
+body.barre > nav{
 	width : 100%;
 	position: fixed;
 	background-color : #3E4644;
 	
 }
-body > nav a{
+body.barre > nav a{
 	display: inline-block;
 	text-decoration: none;
 }
@@ -96,35 +97,13 @@ body > nav a{
 }
 #home{
 	width: 30px;
-	height:20px ;
+	height:  20px;
 	margin-right: 10px;
 
 }
-div.form > form.formulaire{
-	text-align : right;
-	padding-top:15px;
+ul.debut{
+	margin-left: 50px;
 }
-
-body > div.Acceuil{
-	background-color : #7C008A;
-	width: 80%;
-	height: 380px;
-	margin-top: 100px;
-	margin-left: 10%;
-}
-body >div.Acceuil h2{
-	text-align : center;
-}
-.Acceuil div.listej {
-	background-image : url("../Images_CSS/catalogue.png");
-	color: #EEB600;
-	width: 90%;
-	margin-left : 5%;
-	padding: 10px 0px;
-	height: 70%;
-}
-.Acceuil div.listej ul{
-	text-align : center
-	vertical-align: left;
-	margin-left: 20%;
+h4.rappel{
+	margin-left: 75px;
 }
