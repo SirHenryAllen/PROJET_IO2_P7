@@ -8,12 +8,12 @@
 	<body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="Index.html"><img id="home" src="Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
 				</li>	
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="Jeux/Jeux.html">Toute la selection</a></li>
+						<li><a href="../Jeux/Jeux.html">Toute la selection</a></li>
 						<li><a href="#">Recenser</a></li>
 						<li><a href="#">Les Mieux notés</a></li>
 					</ul>
@@ -38,10 +38,20 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="Moncompte.html"><img id="pdp" src="Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="#"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
 				</li>		
 			</ul>
 		</nav>
+		<div>
+			<hr/>
+			<ul>
+				<li><h3>Se connecter</h3></li>
+			</ul>
+			<hr/>
+				<h1>Vous ne pourrez vous connecter à votre compte que si vous êtes bien inscrit</h1>
+			<hr/>
+
+		</div>
 	</body>
 
 </html>
