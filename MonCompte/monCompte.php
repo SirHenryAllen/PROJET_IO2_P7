@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Jeux</title>
-	<link rel="stylesheet" href="StyleJeux.css">
-</head>
-<body>
+	<head>
+		<meta charset="utf-8">
+		<title>Se connecter aux 80's</title>
+		<link rel="stylesheet" href="styleMonCompte.css">
+	</head>
+	<body>
 		<nav>
 			<ul>
 				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
@@ -13,7 +13,7 @@
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="Jeux.html">Toute la selection</a></li>
+						<li><a href="../Jeux/Jeux.html">Toute la selection</a></li>
 						<li><a href="#">Recenser</a></li>
 						<li><a href="#">Les Mieux notés</a></li>
 					</ul>
@@ -38,9 +38,20 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="#"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
 				</li>		
 			</ul>
 		</nav>
-</body>
+		<div>
+			<hr/>
+			<ul>
+				<li><h3>Se connecter</h3></li>
+			</ul>
+			<hr/>
+				<h1>Vous ne pourrez vous connecter à votre compte que si vous êtes bien inscrit</h1>
+			<hr/>
+
+		</div>
+	</body>
+
 </html>

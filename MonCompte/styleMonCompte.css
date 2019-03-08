@@ -1,14 +1,7 @@
-@charset "utf-8";
 html{
-	margin : 0;
-	padding : 0;
-	background: url(trip.jpg) no-repeat center fixed;
-	background-size : cover;
-}
-header{
-	color : green;
-	background-color : none;
-	text-align : center;
+	margin: 0;
+	margin: 0;
+	background-color: grey;
 }
 img.head{
 	width : 120px;
@@ -23,15 +16,6 @@ body{
 	margin: 0px;
 	padding: 0px;
 
-}
-footer p{
-	color : SlateGray;
-	text-align : right;
-	font-size : x-small;
-}
-form.formulaire{
-	text-align : right;
-	padding-top:15px;
 }
 body > nav> ul{
 	margin : 0px;
@@ -59,11 +43,6 @@ nav > ul::after{
 }
 .sousliste{
 	display : none;
-}
-.sousliste li a:hover{
-	color: black;
-	background-color:#F8032F;
-	border : 1px solid black;
 }
 body > nav > ul li:hover .sousliste{
 	display: inline-block;
@@ -110,7 +89,6 @@ body > nav a{
 	float: left;
 
 }
-
 #pdp{
 	width: 20px;
 	height:20px ;
@@ -122,36 +100,4 @@ body > nav a{
 	height:  20px;
 	margin-right: 10px;
 
-}
-.Acceuil{
-	background-color : yellow;
-	width: 80%;
-	height: 380px;
-	margin-left:10%;
-}
-body > div.Acceuil div{
-	display: inline-block;
-	width: 49%;
-	height: 300px;
-}
-.Sousbloc1{
-	background-color: green;
-	margin-left:1%;
-	height:;
-}
-.Sousbloc1 p{
-	padding-left: 15px;
-	padding-bottom : 20px;
-}
-.Sousbloc2{
-	background-color: SlateGray;
-	vertical-align: top;
-}
-.Sousbloc2 p{
-	
-	padding-left: 15px;
-}
-#Vignetteacceuil h4{
-	margin : 20px;
-	padding-top: 20px;
 }
