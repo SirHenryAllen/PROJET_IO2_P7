@@ -54,10 +54,39 @@
 				<li><h3>Se connecter</h3></li>
 			</ul>
 			<hr/>
-			<h4 class="rappel">Vous ne pourrez vous connecter à votre compte que si vous êtes bien inscrit</h4>
+			<h4 class="rappel">Vous ne pourrez vous connecter à votre compte que si vous êtes déja inscrit sur le site</h4>
 			<hr/>
 			<br/>
-			
+			<br/>
+			<div id="connexion">
+				<form method="POST" action="">
+					<table>
+						<tr>
+							<td>
+								<label for="pseudo">
+								Pseudo :
+								</label>
+							</td>
+							<td>
+								<input type="text" placeholder="Votre pseudonyme" name="pseudo" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="mdp">
+								Mot de passe :
+								</label>
+							</td>
+							<td>
+								<input type="text" placeholder="Votre Mot de passe" name="mdp" />
+							</td>
+						</tr>
+					</table>
+				</form>
+				<p>
+					Vous n'êtes toujours pas inscrit? <a href="inscription.php">Rejoignez-nous dès à present !!</a>
+				</p>
+			</div>
 		</div>
 	</body>
 
