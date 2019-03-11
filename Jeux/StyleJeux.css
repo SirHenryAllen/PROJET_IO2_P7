@@ -105,15 +105,18 @@ div.form > form.formulaire{
 	padding-top:15px;
 }
 
-body > div.Acceuil{
+body > div.Selection{
 	background-color : #7C008A;
 	width: 80%;
 	height: 380px;
 	margin-top: 100px;
 	margin-left: 10%;
 }
-body >div.Acceuil h2{
+body >div.Selection h2{
 	text-align : center;
+}
+body >div.Selection form {
+	text-align : right;
 }
 .Acceuil div.listej {
 	background-image : url("../Images_CSS/catalogue.png");
