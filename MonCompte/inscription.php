@@ -1,6 +1,6 @@
 <?php
 
-	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres', 'nadim', 'Baya1934');
+	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8', 'nadim', 'Baya1934');
 	if(isset($_POST['jesuisinscris'])){
 			$pseudo = htmlspecialchars($_POST['pseudo']);
 			$mail = htmlspecialchars($_POST['mail']);
@@ -12,8 +12,8 @@
 			if($pseudolength <= 30){
 				if($mail == $mailconf){
 					if($mdp == $mdpconf){
-						$ajouterm = $bdd->prepare("INSERT INTO membres(pseudo, mail, mdp) VALUES(,,)");
-						$ajouterm->execute(array($pseudo, $mail, $mdp));
+						$ajouterm = $bdd->prepare('INSERT INTO espace_membres(id,pseudo, mail, mdp) VALUES(?,?,?,?)');
+						$ajouterm->execute(array(NULL,$_POST['pseudo'], $_POST['mail'], $_POST['passwd']));
 						$erreur = "Votre compte est crée !!!";
 					}else{
 						$erreur = "Les mots de passe que vous avez entrés ne correspondent pas!!";
@@ -81,7 +81,7 @@
 		<li><h3>Créer un compte</h3></li></ul>
 		<hr />
 		<div id="inscription">
-			<form method="POST" action="">
+			<form method="POST" action="inscription.php">
 				<table>
 					<tr>
 						<td><label for="mail"><strong>* Adresse mail :</strong></label></td>
