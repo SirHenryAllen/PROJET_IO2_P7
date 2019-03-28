@@ -131,3 +131,6 @@ body >div.Selection form {
 	vertical-align: left;
 	margin-left: 20%;
 }
+.date {
+	width: 50px;
+}
