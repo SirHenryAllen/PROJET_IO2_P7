@@ -16,21 +16,14 @@
 				$pseudoexistedeja = $pseudoexisted->rowCount();
 				if($pseudoexistedeja == 0){
 					if($mail == $mailconf){
-						$mailexistedeja = $bdd->prepare('SELECT * FROM espace_membres WHERE mail = ?');
-						$mailexistedeja->execute(array($_POST['mail']));
-						$mailexisted = $mailexistedeja->rowCount();
-						if($mailexisted == 0){
 							if($mdp == $mdpconf){
-								$ajouterm = $bdd->prepare('INSERT INTO espace_membres(id,pseudo, mail, mdp) VALUES(?,?,?,?)');
+								$ajouterm = $bdd->prepare('INSERT INTO espace_membres(id,pseudo, mail, mdp) VALUES(?,?,?,?)'); //Grosse couillasse ici
 								$ajouterm->execute(array(NULL,$_POST['pseudo'], $_POST['mail'], $_POST['passwd']));
 								$erreur = "Votre compte est crée !!!";
 								$lol = "lol";
 							}else{
 								$erreur = "Les mots de passe que vous avez entrés ne correspondent pas!!";
 							}
-						}else{
-							$erreur = "Adresse mail déjà utilisé par un autre utilisateur :/";
-						}
 					}else{
 						$erreur = "Revoyez votre adresse mail en vous assurant de la confirmer correctement cette fois!!";
 					}
