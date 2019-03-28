@@ -3,7 +3,7 @@
 html{
 	margin : 0;
 	padding : 0;
-	background: url(../Images_CSS/backgroundJeux.jpg) no-repeat center fixed;
+	background: url(../../Images_CSS/backgroundJeux.jpg) no-repeat center fixed;
 }
 
 a {
@@ -106,7 +106,7 @@ div.form > form.formulaire{
 }
 
 body > div.Selection{
-	background-color : #7C008A;
+	background-color : green;
 	width: 80%;
 	height: 380px;
 	margin-top: 100px;
@@ -116,7 +116,7 @@ body >div.Selection h2{
 	text-align : center;
 }
 body >div.Selection form {
-	text-align : right;
+	text-align : left;
 }
 .Acceuil div.listej {
 	background-image : url("../Images_CSS/catalogue.png");
@@ -130,4 +130,7 @@ body >div.Selection form {
 	text-align : center
 	vertical-align: left;
 	margin-left: 20%;
+}
+.date {
+	width: 50px;
 }
