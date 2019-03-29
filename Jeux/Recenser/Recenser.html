@@ -41,42 +41,63 @@
 				</li>		
 			</ul>
 		</nav>
+		
+        <br/>
 		<br/>
 		<br/>
 		<br/>
 		<br/>
-		<br/>
-		<div class="form">          	
+		
+        <div class="form">          	
             <form class="formulaire" action="">
                <input class="champ" type="text" placeholder="Tapez votre recherche ici"/>
                <input id="rechbouton" class="bouton" type="button" value="rechercher"/>      
             </form>
         </div>
+        
+
         <div class="Selection">
-        	<h2>Recenser nouveau jeu</h2>
+        	
+            <table>
+            
+            <thead>
+            <h2>Recenser nouveau jeu</h2>
+            </thead>
+            
+            <div class="test">
+            
+            <tbody>
+            
+                <tr>
+                <td>
+            
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                Nom : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
             </form>
+            
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                Editeur : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
             </form>
+            
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                Développeur : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
             </form>
+            
             <br>
+            
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                Date de sortie : <input class="date" type="text" placeholder="jour"/>
                /<input class="date" type="text" placeholder="mois"/>  
                /<input class="date" type="text" placeholder="année"/>  
-
-
             </form>
+            
             <br>
-        	<div class="Plateforme">
+        	
+            <div class="Plateforme">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         		Plateforme : <select name="Plateforme" size="1">
         			<option value="1">PC</option>
@@ -89,8 +110,10 @@
         			<option value="8">Autre...</option>
         		</select>
         	</div>
-        	<br>
-        	<div class="Genre">
+        	
+            <br>
+        	
+            <div class="Genre">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         		genre : <select name="Plateforme" size="1">
         			<option value="1">Action/Aventure</option>
@@ -112,6 +135,34 @@
         			<option value="17">Autre...</option>
         		</select>
         	</div>
+            </td>
+            <td>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            </td>
+            <td>
+            <div class="Insertion">
+            <form method="post" action="reception.php" enctype="multipart/form-data">
+                <label for="icone">Ajouter une image (JPG, PNG ou GIF | max. 15 Ko) :</label><br />
+                <input type="file" name="icone" id="icone" /><br />
+                <br>
+                <label for="mon_fichier"> Autre fichier (tous formats | max. 1 Mo) :</label><br />
+                <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+                <br>
+                <label for="titre">Description du fichier (max. 50 caractères) :</label><br />
+                <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
+                <br>
+                <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
+                <textarea name="description" id="description"></textarea><br />
+                <input type="submit" name="submit" value="Envoyer" />
+            </form>
+            </div>
+            </td>
+            </tr>
+                </tbody>
+            </div>
+    </table>
+
         </div>
 </body>
 </html>
