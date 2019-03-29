@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+	
+	$bdd=new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+	
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
