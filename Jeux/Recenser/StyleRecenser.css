@@ -112,7 +112,7 @@ body > div.Selection{
 	margin-top: 100px;
 	margin-left: 10%;
 }
-body >div.Selection h2{
+body >div> h2{
 	text-align : center;
 }
 body >div.Selection form {
