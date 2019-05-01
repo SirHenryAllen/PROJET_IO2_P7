@@ -3,7 +3,8 @@
 html{
 	margin : 0;
 	padding : 0;
-	background: url(../../Images_CSS/backgroundJeux.jpg) no-repeat center fixed;
+	background: url(../../Images_CSS/827729467.jpg) no-repeat center fixed;
+	background-size : cover;
 }
 
 a {
@@ -119,7 +120,6 @@ body >div.Selection form {
 	text-align : left;
 }
 .Acceuil div.listej {
-	background-image : url("../Images_CSS/catalogue.png");
 	color: #EEB600;
 	width: 90%;
 	margin-left : 5%;
