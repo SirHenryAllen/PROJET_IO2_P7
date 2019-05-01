@@ -28,11 +28,7 @@
 						<li><a href="#">Articles et Chroniques récentes</a></li>
 					</ul>
 				</li>
-				<li class="list-Critiques"><a href="Critiques.html">Critiques</a>
-					<ul class="sousliste">
-						<li><a href="#">Toutes les critiques</a></li>
-						<li><a href="#">Critiques récentes</a></li>
-					</ul>
+				<li class="list-Critiques"><a href="../Critiques/critiques.html">Critiques</a>
 				</li>
 				<li class="list-Forum"><a href="Forum.html">Forum</a>
 				</li>
