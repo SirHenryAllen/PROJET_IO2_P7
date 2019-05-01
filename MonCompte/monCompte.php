@@ -18,9 +18,8 @@
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="../Jeux/Jeux.html">Toute la selection</a></li>
-						<li><a href="#">Recenser</a></li>
-						<li><a href="#">Les Mieux notés</a></li>
+						<li><a href="../Jeux/Selection/Selection.html">Toute la selection</a></li>
+						<li><a href="../Jeux/Recenser/Recenser.html">Recenser</a></li>
 					</ul>
 				</li>
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
