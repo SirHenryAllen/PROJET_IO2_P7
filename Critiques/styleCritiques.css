@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+html{
+	margin : 0;
+	padding : 0;
+	background: url(../Images_CSS/catalogue.png) no-repeat center fixed;
+	background-size : cover;
+}
+
+a {
+	text-decoration : none;
+}
+body{
+	font-family :Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	margin: 0px;
+	padding: 0px;
+
+}
+body > nav> ul{
+	margin : 0px;
+	padding: 0px;
+	text-align: center;
+
+}
+body > nav > ul > li{
+	float: left;
+	position: relative;
+
+}
+body > nav > ul > li > a{
+	padding: 15px 23px;
+	margin: 0 30px;
+	color: white;
+}
+nav li{
+	list-style-type: none;
+}
+nav > ul::after{
+	content:"";
+	display: block;
+	clear: both;
+}
+.sousliste{
+	display : none;
+}
+body > nav > ul li:hover .sousliste{
+	display: inline-block;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	padding: 0px;
+	z-index: 100000;
+}
+nav ul li:hover{
+	background-color : #F8032F; /*couleur de la section de el barre*/
+	color: white;
+}
+.sousliste li a:hover{
+	background-color: red;
+	color: black;
+	border: 1px solid black;
+}
+.sousliste li a{
+	font-size: 13px;
+	color: #F8032F;
+	background-color : black;
+	width:240px;
+	padding: 15px 10px;
+}
+.sousliste li a:hover{
+	color: black;
+	background-color:#F8032F;
+	border : 1px solid black;
+}
+body > nav{
+	width : 100%;
+	position: fixed;
+	background-color : #3E4644;
+	
+}
+body > nav a{
+	display: inline-block;
+	text-decoration: none;
+}
+.list-Moncompte{
+	float: right;
+}
+.list-home{
+	float: left;
+
+}
+#pdp{
+	width: 20px;
+	height:20px ;
+	margin-right: 10px;
+
+}
+#home{
+	width: 30px;
+	height:20px ;
+	margin-right: 10px;
+
+}
+div.form > form.formulaire{
+	text-align : right;
+	padding-top:15px;
+}
+
+body > div.Selection{
+	background-color : #7C008A;
+	width: 80%;
+	height: 380px;
+	margin-top: 100px;
+	margin-left: 10%;
+}
+body >div.Selection h2{
+	text-align : center;
+}
+body >div.Selection form {
+	text-align : right;
+}
+.Acceuil div.listej {
+	background-image : url("../Images_CSS/catalogue.png");
+	color: #EEB600;
+	width: 90%;
+	margin-left : 5%;
+	padding: 10px 0px;
+	height: 70%;
+}
+.Acceuil div.listej ul{
+	text-align : center
+	vertical-align: left;
+	margin-left: 20%;
+}

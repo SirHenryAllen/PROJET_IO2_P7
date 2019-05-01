@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Toute la sélection</title>
-	<link rel="stylesheet" href="StyleSelection.css">
+	<link rel="stylesheet" href="styleCritiques.css">
 </head>
 <body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../../Index.html"><img id="home" src="../../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
 				</li>	
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="Selection.html">Toute la sélection</a></li>
-						<li><a href="../Recenser/Recenser.html">Recenser</a></li>
+						<li><a href="../Jeux/Selection/Selection.html">Toute la sélection</a></li>
+						<li><a href="../Jeux/Recenser/Recenser.html">Recenser</a></li>
 					</ul>
 				</li>
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
@@ -23,7 +23,7 @@
 						<li><a href="#">Articles et Chroniques récentes</a></li>
 					</ul>
 				</li>
-				<li class="list-Critiques"><a href="../../Critiques/Critiques.html">Critiques</a>
+				<li class="list-Critiques"><a href="critiques.html">Critiques</a>
 				</li>
 				<li class="list-Forum"><a href="Forum.html">Forum</a>
 				</li>
@@ -33,7 +33,7 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
 				</li>		
 			</ul>
 		</nav>
@@ -49,7 +49,7 @@
             </form>
         </div>
         <div class="Selection">
-        	<h2>Toute la sélection</h2>
+        	<h2>Toutes les critiques</h2>
                <form class="formulaire" action="">
                <input class="champ" type="text" placeholder="Tapez votre recherche ici"/>
                <input id="rechbouton" class="bouton" type="button" value="rechercher"/>      
@@ -80,6 +80,11 @@
         			<option value="7">PS2</option>
         			<option value="8">Xbox</option>
         		</select>
+        		&nbsp &nbsp &nbsp | &nbsp &nbsp &nbsp
+               Jeu <form class="formJeu" action="">
+               <input class="formJeu" type="text" placeholder="Tapez votre recherche ici"/>
+               <input id="rechJeu" class="bouton" type="button" value="rechercher"/>      
+            	</form>
         	</div>
         	<br>
         	<div class="liste Jeux">
