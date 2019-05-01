@@ -10,11 +10,10 @@
 			<ul>
 				<li class="list-home"><a href="../../Index.html"><img id="home" src="../../Images_CSS/CSS.png"></a>
 				</li>	
-				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
 						<li><a href="../Selection/Selection.html">Toute la sélection</a></li>
-						<li><a href="Recenser.html">Recenser</a></li>
+						<li><a href="Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
@@ -69,33 +68,33 @@
             
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Nom : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
+               Nom : <input class="champ" type="nom" placeholder="Entrer le nom ici"/>  
             </form>
             
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Editeur : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
+               Editeur : <input class="champ" type="edit" placeholder="Entrer le nom ici"/>  
             </form>
             
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Développeur : <input class="champ" type="text" placeholder="Entrer le nom ici"/>  
+               Développeur : <input class="champ" type="dev" placeholder="Entrer le nom ici"/>  
             </form>
             
             <br>
             
             <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Date de sortie : <input class="date" type="text" placeholder="jour"/>
-               /<input class="date" type="text" placeholder="mois"/>  
-               /<input class="date" type="text" placeholder="année"/>  
+               Date de sortie : <input class="date" type="jour" placeholder="jour"/>
+               /<input class="date" type="mois" placeholder="mois"/>  
+               /<input class="date" type="annee" placeholder="année"/>  
             </form>
             
             <br>
         	
             <div class="Plateforme">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-        		Plateforme : <select name="Plateforme" size="1">
+        		Plateforme : <select name="plateforme" size="1">
         			<option value="1">PC</option>
         			<option value="2">PS4</option>
         			<option value="3">XboxOne</option>
@@ -111,7 +110,7 @@
         	
             <div class="Genre">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-        		genre : <select name="Plateforme" size="1">
+        		genre : <select name="genre" size="1">
         			<option value="1">Action/Aventure</option>
         			<option value="2">Beat them all</option>
         			<option value="3">Beat the up</option>
@@ -150,15 +149,18 @@
                 <br>
                 <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
                 <textarea name="description" id="description"></textarea><br />
-                <input type="submit" name="submit" value="Envoyer" />
             </form>
             </div>
             </td>
             </tr>
                 </tbody>
             </div>
-    </table>
-
+            </table>
+        </div>
+       
+        <div class="recenser">
+           <input type="submit" name="submit" value="Envoyer" /> 
+           <?php $bdd = new PDO('nom','edit','dev','jour','moi','annee','plateforme','genre'); ?>
         </div>
 </body>
 </html>
