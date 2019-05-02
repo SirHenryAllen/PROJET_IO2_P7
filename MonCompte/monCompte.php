@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <?php
-	
-	$bdd=new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
-	
+	session_start();
+	$bdd=new PDO('mysql:host=localhost;dbname=espace_membres','nadim','Baya1934');
+	if(isset($_POST['formconnexion'])){
+		$pseudoconnect = $_POST['pseudo'];
+		$mdpconnect = password_hash($_POST['mdp']);
+		if(!empty($pseudoconnect) && !empty($mdpconnect)){
+			$requser = $bdd->prepare("SELECT * FROM espace_membres WHERE pseudo = ? AND mdp = ?");
+			$requser->execute(array($pseudoconnect, $mdpconnect));
+			$userexist = $requser->rowCount();
+			if($userexist == 1){
+				$userinfo = $requser->fetch();
+				$_SESSION['id'] = $userinfo['id'];
+				$_SESSION['pseudo'] = $userinfo['pseudo'];
+				$_SESSION['mail'] = $userinfo['mail'];
+				header('Location: profil.php?id='.$_SESSION['id']);
+			}else{
+				$erreur = "Pseudo ou Mot de passe incorrect";
+			}
+		}else{
+			$erreur = "Tous les champs doivent être complétés !";
+		}
+	}
 ?>
 <html>
 	<head>
@@ -81,11 +100,23 @@
 								<input type="text" placeholder="Votre Mot de passe" name="mdp" />
 							</td>
 						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="submit" name="formconnexion" value="Se connecter"/>
+							</td>
+						</tr>
 					</table>
 				</form>
 				<p>
 					Vous n'êtes toujours pas inscrit? <a href="inscription.php">Rejoignez-nous dès à present !!</a>
 				</p>
+				<br/>
+				<?php 
+					if(isset($erreur)){
+						echo '<font color="red">'.$erreur.'</font>';
+					}
+				?>
 			</div>
 		</div>
 	</body>
