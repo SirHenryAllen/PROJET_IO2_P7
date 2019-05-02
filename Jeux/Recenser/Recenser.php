@@ -1,8 +1,16 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <?php
     
 ?>
+=======
+    <?php 
+        $bdd = new PDO('mysql:host=localhost;dbname=','mat','mdp');
+    ?>
+
+>>>>>>> 6fa97bcb6ff7251e5d2c9767b4fada47af0fe529
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Rencenser</title>
@@ -152,7 +160,9 @@
                 <br>
                 <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
                 <textarea name="description" id="description"></textarea><br />
-            </form>
+            </form>   <?php 
+                        $_POST['icone']
+                        ?>
             </div>
             </td>
             </tr>
@@ -163,7 +173,7 @@
        
         <div class="recenser">
            <input type="submit" name="submit" value="Envoyer" /> 
-           <?php $bdd = new PDO('nom','edit','dev','jour','moi','annee','plateforme','genre'); ?>
+          
         </div>
 </body>
 </html>
