@@ -1,7 +1,7 @@
 
 <?php
 
-	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8', 'nadim', 'Baya1934');
+	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres', 'nadim', 'Baya1934');
 	if(isset($_POST['jesuisinscris'])){
 			$pseudo = htmlspecialchars($_POST['pseudo']);
 			$mail = htmlspecialchars($_POST['mail']);
@@ -16,19 +16,26 @@
 				$pseudoexistedeja = $pseudoexisted->rowCount();
 				if($pseudoexistedeja == 0){
 					if($mail == $mailconf){
+						$mailexisted = $bdd->prepare('SELECT * FROM espace_membres WHERE mail = ?');
+						$mailexisted->execute(array($_POST['mail']));
+						$mailexistedeja = $mailexisted->rowCount();
+						if($mailexistedeja == 0){
 							if($mdp == $mdpconf){
-								$ajouterm = $bdd->prepare('INSERT INTO espace_membres(id,pseudo, mail, mdp) VALUES(?,?,?,?)'); //Grosse couillasse ici
+								$ajouterm = $bdd->prepare('INSERT INTO espace_membres(id,pseudo, mail, mdp) VALUES(?,?,?,?)'); 
 								$ajouterm->execute(array(NULL,$_POST['pseudo'], $_POST['mail'], $_POST['passwd']));
 								$erreur = "Votre compte est crée !!!";
 								$lol = "lol";
 							}else{
 								$erreur = "Les mots de passe que vous avez entrés ne correspondent pas!!";
 							}
+						}else{
+							$erreur = "Cette adresse mail est déjà utilisé par un autre utilisateur";
+						}
 					}else{
 						$erreur = "Revoyez votre adresse mail en vous assurant de la confirmer correctement cette fois!!";
 					}
 				}else{
-					$erreur = "pseudo déjà utilisé par un autre utilisateur :/"
+					$erreur = "pseudo déjà utilisé par un autre utilisateur :/";
 				}
 			}else{
 				$erreur = "Diantre votre pseudo est bien trop long cher ami :/";
@@ -118,10 +125,10 @@
 				<input type="submit" name="jesuisinscris" value="Créer mon compte" />
 			</form>
 			<?php
-			if(isset($erreur)){
-				echo '<font color="red">'.$erreur."</font>";
-			}else if(isset($erreur) && isset($lol)){
+			if(isset($erreur) && isset($lol)){
 				echo '<font color="black"'.$erreur."</font>"."<a href='monCompte.php'>.Connectez-vous donc!!!</a>";
+			}else if(isset($erreur)){
+				echo '<font color="red">'.$erreur."</font>";
 			}
 			?>
 		</div>
