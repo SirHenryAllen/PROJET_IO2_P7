@@ -1,8 +1,14 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<?php
+    
+?>
+=======
     <?php 
         $bdd = new PDO('mysql:host=localhost;dbname=','mat','mdp');
     ?>
 
+>>>>>>> 6fa97bcb6ff7251e5d2c9767b4fada47af0fe529
 <html>
 
 <head>
