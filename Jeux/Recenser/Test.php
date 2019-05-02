@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Toute la sélection</title>
-	<link rel="stylesheet" href="StyleSelection.css">
+	<link rel="stylesheet" href="styleRecenser.css">
 </head>
 <body>
 		<nav>
@@ -13,8 +13,8 @@
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="Selection.html">Toute la sélection</a></li>
-						<li><a href="../Recenser/Recenser.php">Recenser</a></li>
+						<li><a href="Selection.php">Toute la sélection</a></li>
+						<li><a href="Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
@@ -83,11 +83,13 @@
         	</div>
         	<br>
         	<div class="liste Jeux">
-        		<ul>
-        			<li>Test jeu 1</li>
-        			<li>Test jeu 2</li>
-        			<li>Test jeu 3</li>
-        		</ul>
+<?php
+    require_once "connex.php";
+    require_once "affichage.php";
+    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres','nadim','Baya1934');
+    $jeux = lire_produits($bdd);
+    page_produits($jeux);
+?>
         	</div>
         </div>
 </body>
