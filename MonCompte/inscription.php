@@ -126,7 +126,7 @@
 			</form>
 			<?php
 			if(isset($erreur) && isset($lol)){
-				echo '<font color="black"'.$erreur."</font>"."<a href='monCompte.php'>.Connectez-vous donc!!!</a>";
+				echo '<font color="black">'.$erreur."</font>"."<a href='monCompte.php'>.Connectez-vous donc!!!</a>";
 			}else if(isset($erreur)){
 				echo '<font color="red">'.$erreur."</font>";
 			}
