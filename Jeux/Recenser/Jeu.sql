@@ -4,7 +4,7 @@ create table Jeu (
 	editeur VARCHAR(25),
 	developpeur VARCHAR(25),
 	jour int,
-	moi int,
+	mois int,
 	annee int,
 	plateforme int,
 	genre int,

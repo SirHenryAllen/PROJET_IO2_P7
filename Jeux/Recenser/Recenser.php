@@ -118,7 +118,7 @@
         		genre : <select name="genre" size="1">
         			<option value="1">Action/Aventure</option>
         			<option value="2">Beat them all</option>
-        			<option value="3">Beat the up</option>
+        			<option value="3">Beat them up</option>
         			<option value="4">Compilation</option>
         			<option value="5">Combat</option>
         			<option value="6">Course</option>
@@ -154,9 +154,7 @@
                 <br>
                 <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
                 <textarea name="description" id="description"></textarea><br />
-            </form>   <?php 
-                        $_POST['icone']
-                        ?>
+            </form>
             </div>
             </td>
             </tr>
