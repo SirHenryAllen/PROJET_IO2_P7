@@ -13,7 +13,7 @@
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="Selection.php">Toute la sélection</a></li>
+						<li><a href="../Selection/Selection.php">Toute la sélection</a></li>
 						<li><a href="Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
