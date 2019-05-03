@@ -60,7 +60,7 @@
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="../Jeux/Selection/Selection.html">Toute la selection</a></li>
+						<li><a href="../Jeux/Selection/Selection.php">Toute la selection</a></li>
 						<li><a href="../Jeux/Recenser/Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
@@ -70,7 +70,7 @@
 						<li><a href="#">Articles et Chroniques récentes</a></li>
 					</ul>
 				</li>
-				<li class="list-Critiques"><a href="../Critiques/critiques.html">Critiques</a>
+				<li class="list-Critiques"><a href="../Critiques/critiques.php">Critiques</a>
 				</li>
 				<li class="list-Forum"><a href="Forum.html">Forum</a>
 				</li>
