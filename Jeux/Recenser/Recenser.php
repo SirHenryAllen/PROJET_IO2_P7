@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
     <?php 
-        $bdd = new PDO('mysql:host=localhost;dbname=','mat','mdp');
+        $bdd = new PDO('mysql:host=localhost;dbname=Jeux','nadim','Baya1934');
     ?>
+
 
 <html>
 
@@ -17,7 +19,7 @@
 				</li>	
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="../Selection/Selection.html">Toute la sélection</a></li>
+						<li><a href="../Selection/Selection.php">Toute la sélection</a></li>
 						<li><a href="Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
