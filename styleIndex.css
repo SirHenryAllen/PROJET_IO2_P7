@@ -155,3 +155,6 @@ body > div.Acceuil div{
 	margin : 20px;
 	padding-top: 20px;
 }
+.Acceuil {
+	text-align: center;
+}
