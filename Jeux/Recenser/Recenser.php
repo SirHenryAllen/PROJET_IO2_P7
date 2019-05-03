@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <?php
-    
+    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+    if(isset($_POST['recensement'])){
+        if(isset($_POST['nom']) && isset($_POST['edit']) && isset($_POST['dev']) && isset($_POST['jour']) && isset($_POST['mois']) && isset($_POST['annee']) && isset($_POST['plateforme']) && isset($_POST['genre']) && isset($_POST['description']) && isset($_POST['icone'])){
+            $nom = $_POST['nom'];
+            $editeur = $_POST['edit'];
+            $developpeur = $_POST['dev'];
+            $jour = $_POST['jour'];
+            $mois = $_POST['mois'];
+            $annee = $_POST['annee'];
+            $plateforme = $_POST['plateforme'];
+            $genre = $_POST['genre'];
+            $description = $_POST['description'];
+            $image = $_POST['icone'];
+            $nomlen = strlen($nom);
+            if($nomlen <= 60){
+                if($jour <= 31 && $jour >= 0 && $mois <= 12 && $mois >= 0 && $annee <= 2100 && $annee >=1970){
+                    $newgame = $bdd->prepare('INSERT INTO Jeux(id,nom,editeur,developpeur,jour,mois,annee,plateforme,genre,description, image) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+                    $newgame->execute(array(null,$_POST['nom'],$_POST['edit'], $_POST['dev'], $_POST['jour'], $_POST['mois'], $_POST['annee'], $_POST['plateforme'], $_POST['genre'], $_POST['description'],$_POST['icone']));
+                    $erreur="Le Jeu a été ajouté à la selection";
+                }else{
+                    $erreur= "La date de sortie est incoherentes";
+                }
+            }else{
+                $erreur= "Le nom est trop long";
+            }
+        }else{
+            $erreur= "Certains champs sont incomplets";
+        }
+    }
 ?>
-=======
-    <?php 
-        $bdd = new PDO('mysql:host=localhost;dbname=','mat','mdp');
-    ?>
-
->>>>>>> 6fa97bcb6ff7251e5d2c9767b4fada47af0fe529
 <html>
 
 <head>
@@ -23,7 +44,7 @@
 				</li>	
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="../Selection/Selection.html">Toute la sélection</a></li>
+						<li><a href="../Selection/Selection.php">Toute la sélection</a></li>
 						<li><a href="Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
@@ -33,7 +54,7 @@
 						<li><a href="#">Articles et Chroniques récentes</a></li>
 					</ul>
 				</li>
-				<li class="list-Critiques"><a href="../../Critiques/critiques.html">Critiques</a>
+				<li class="list-Critiques"><a href="../../Critiques/critiques.php">Critiques</a>
 				</li>
 				<li class="list-Forum"><a href="Forum.html">Forum</a>
 				</li>
@@ -72,38 +93,29 @@
             
             <div class="test">
             
-            <tbody>
+            
             
                 <tr>
                 <td>
             
-            <form class="formulaire" action="">
+            <form method="POST" action="Recenser.php">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Nom : <input class="champ" type="nom" placeholder="Entrer le nom ici"/>  
-            </form>
+               Nom : <input class="champ" type="text" name="nom" placeholder="Entrer le nom ici"/>  
             
-            <form class="formulaire" action="">
+           
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Editeur : <input class="champ" type="edit" placeholder="Entrer le nom ici"/>  
-            </form>
+               Editeur : <input class="champ" type="text" name="edit" placeholder="Entrer le nom ici"/>  
             
-            <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Développeur : <input class="champ" type="dev" placeholder="Entrer le nom ici"/>  
-            </form>
-            
+               Développeur : <input class="champ" type="text" name="dev" placeholder="Entrer le nom ici"/>  
             <br>
-            
-            <form class="formulaire" action="">
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Date de sortie : <input class="date" type="jour" placeholder="jour"/>
-               /<input class="date" type="mois" placeholder="mois"/>  
-               /<input class="date" type="annee" placeholder="année"/>  
-            </form>
+               Date de sortie : <input class="date" type="number" name="jour" placeholder="jour"/>
+               <input class="date" type="number" name="mois" placeholder="mois"/>  
+               <input class="date" type="number" name="annee" placeholder="année"/>  
             
             <br>
         	
-            <div class="Plateforme">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         		Plateforme : <select name="plateforme" size="1">
         			<option value="1">PC</option>
@@ -115,16 +127,15 @@
         			<option value="7">Xbox</option>
         			<option value="8">Autre...</option>
         		</select>
-        	</div>
         	
             <br>
         	
-            <div class="Genre">
+            
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         		genre : <select name="genre" size="1">
         			<option value="1">Action/Aventure</option>
         			<option value="2">Beat them all</option>
-        			<option value="3">Beat the up</option>
+        			<option value="3">Beat them up</option>
         			<option value="4">Compilation</option>
         			<option value="5">Combat</option>
         			<option value="6">Course</option>
@@ -140,40 +151,42 @@
         			<option value="16">Stratégie</option>
         			<option value="17">Autre...</option>
         		</select>
-        	</div>
+        	
             </td>
             <td>
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             </td>
             <td>
-            <div class="Insertion">
-            <form method="post" action="reception.php" enctype="multipart/form-data">
-                <label for="icone">Ajouter une image (JPG, PNG ou GIF | max. 15 Ko) :</label><br />
-                <input type="file" name="icone" id="icone" /><br />
+            
+                <label for="icone">Ajouter lien d'image (JPG, PNG ou GIF | max. 15 Ko) :<br />
+                <input type="text" name="icone"  id="icone" /></label><br />
                 <br>
-                <label for="mon_fichier"> Autre fichier (tous formats | max. 1 Mo) :</label><br />
-                <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-                <input type="file" name="mon_fichier" id="mon_fichier" /><br />
-                <br>
-                <label for="titre">Description du fichier (max. 50 caractères) :</label><br />
-                <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
-                <br>
+<<<<<<< HEAD
                 <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
                 <textarea name="description" id="description"></textarea><br />
-            </form>   <?php 
-                        $_POST['icone']
-                        ?>
+            </form>
             </div>
+=======
+               
+                <label for="description">Ajouter une description :<br />
+                <textarea name="description" id="description"></textarea></label><br />
+            
+>>>>>>> 0d366f12053d899cfcd2f6222b1e0b270763b8a5
             </td>
             </tr>
-                </tbody>
+        
             </div>
             </table>
+            <input id="recenser" type="submit" name="recensement" value="Recenser">
+            </form>
+            &nbsp &nbsp
+            <?php
+                if(isset($erreur)){
+                    echo '<font color="red">'.$erreur.'</font>';
+                }
+            ?>
+
         </div>
        
-        <div class="recenser">
-           <input type="submit" name="submit" value="Envoyer" /> 
-          
-        </div>
 </body>
 </html>
