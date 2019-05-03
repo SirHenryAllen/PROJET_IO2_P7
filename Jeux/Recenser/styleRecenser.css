@@ -107,7 +107,7 @@ div.form > form.formulaire{
 }
 
 body > div.Selection{
-	background-color : #B22222;
+	background-color : slateGray;
 	width: 80%;
 	height: 380px;
 	margin-top: 100px;
@@ -134,6 +134,7 @@ body >div.Selection form {
 .date {
 	width: 50px;
 }
-.recenser  {
+#recenser  {
+
 	text-align: center;
 }

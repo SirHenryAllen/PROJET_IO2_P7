@@ -54,11 +54,11 @@ function afficher_ligne(&$ligne){
 	$plate[8]="Autre";
 ?>
 	<div class ="Jeuxdes">
-	<h3><? echo $nom;?></h3>
-	<h1><?echo '<font color = "blue">'.$plate[$plateforme].'</font>'?></h1>
+	<h3><?php echo $nom;?></h3>
+	<h1><?php echo '<font color = "blue">'.$plate[$plateforme].'</font>'?></h1>
 	<br><br>
-	<img src=<?echo $image; ?> >
-<?
+	<img src=<?php echo $image; ?> >
+<?php
 	echo "<p> Edité par: ".$editeur.".</p>";
 	echo "<p> Developpé par: ".$developpeur.".</p>";
 	echo "<p> Genre :".$plat[$genre].".</p>";
@@ -67,8 +67,7 @@ function afficher_ligne(&$ligne){
 }
 function page_produits($prods){
 	afficher_entete("Toute La Selection");
-?>
-<?
+
 	while($ligne = mysqli_fetch_assoc($prods))
 		afficher_ligne($ligne);
 
