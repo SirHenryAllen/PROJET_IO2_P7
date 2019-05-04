@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    session_start();
     $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
     if(isset($_POST['recensement'])){
         if(!empty($_POST['nom']) && !empty($_POST['edit']) && !empty($_POST['dev']) && !empty($_POST['jour']) && !empty($_POST['mois']) && !empty($_POST['annee']) && !empty($_POST['plateforme']) && !empty($_POST['genre']) && !empty($_POST['description']) && !empty($_POST['icone'])){
@@ -29,6 +30,7 @@
             $erreur= "Certains champs sont incomplets";
         }
     }
+
 ?>
 <html>
 

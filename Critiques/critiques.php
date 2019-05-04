@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    if(isset($_SESSION['pseudo'])){
+        
+    }
+?>
 <html>
 <head>
 	<meta charset="utf-8">

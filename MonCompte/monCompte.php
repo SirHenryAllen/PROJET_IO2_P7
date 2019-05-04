@@ -2,24 +2,28 @@
 <?php
 	session_start();
 	$bdd=new PDO('mysql:host=localhost;dbname=espace_membres','nadim','Baya1934');
-	if(isset($_POST['formconnexion'])){
-		$pseudoconnect = $_POST['pseudo'];
-		$mdpconnect = $_POST['mdp'];
-		if(!empty($pseudoconnect) && !empty($mdpconnect)){
-			$requser = $bdd->prepare("SELECT * FROM espace_membres WHERE pseudo = ? AND mdp = ?");
-			$requser->execute(array($pseudoconnect, $mdpconnect));
-			$userexist = $requser->rowCount();
-			if($userexist == 1){
-				$userinfo = $requser->fetch();
-				$_SESSION['id'] = $userinfo['id'];
-				$_SESSION['pseudo'] = $userinfo['pseudo'];
-				$_SESSION['mail'] = $userinfo['mail'];
-				header('Location: profil.php?id='.$_SESSION['id']);
+	if(isset($_SESSION['id'])){
+		header('Location: profil.php?id='.$_SESSION['id']);
+	}else{
+		if(isset($_POST['formconnexion'])){
+			$pseudoconnect = $_POST['pseudo'];
+			$mdpconnect = $_POST['mdp'];
+			if(!empty($pseudoconnect) && !empty($mdpconnect)){
+				$requser = $bdd->prepare("SELECT * FROM espace_membres WHERE pseudo = ? AND mdp = ?");
+				$requser->execute(array($pseudoconnect, $mdpconnect));
+				$userexist = $requser->rowCount();
+				if($userexist == 1){
+					$userinfo = $requser->fetch();
+					$_SESSION['id'] = $userinfo['id'];
+					$_SESSION['pseudo'] = $userinfo['pseudo'];
+					$_SESSION['mail'] = $userinfo['mail'];
+					header('Location: profil.php?id='.$_SESSION['id']);
+				}else{
+					$erreur = "Pseudo ou Mot de passe incorrect";
+				}
 			}else{
-				$erreur = "Pseudo ou Mot de passe incorrect";
+				$erreur = "Tous les champs doivent être complétés !";
 			}
-		}else{
-			$erreur = "Tous les champs doivent être complétés !";
 		}
 	}
 ?>
