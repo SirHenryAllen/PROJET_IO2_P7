@@ -95,7 +95,7 @@
                     $stmt = $bdd->query($rq);
                     $ligne = $stmt->fetchAll();
                     foreach($ligne as $a){
-                        afficher_ligne($a);
+                        afficher_ligne($a);break;
                     }
 
                 ?>

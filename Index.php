@@ -52,13 +52,30 @@
         </div>
         <div class="Acceuil">
         	<span id="Vignetteacceuil">
+        		<?php  ?>
         		<h2>Acceuil</h2>
         	</span>
         	<div class="Sousbloc1">
-        		<h3>Actus 1</h3>
+        		<h3>Dernier jeu recensé</h3>
+        		<hr>
+        		<br>
+            		<?php
+                    require_once "Aux.php";
+                    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+                    $rq= 'SELECT * FROM Jeux;';
+                    $stmt = $bdd->query($rq);
+                    $ligne = $stmt->fetchAll();
+                    foreach($ligne as $a){
+                        afficher_ligne($a); break;
+                    }
+
+                ?>
         	</div>
         	<div class ="Sousbloc2">
-        		<h3>Actus 2</h3>
+        		<h3>Dernière critique</h3>
+        		<hr>
+        		<br>
+
         	</div>
         </div>
 	</body>
