@@ -54,7 +54,7 @@ function afficher_ligne(&$ligne){
 	$plate[8]="Autre";
 ?>
 	<div class ="Jeuxdes">
-	<h3><?php echo $nom;?></h3>
+	<h3 id=<?=$nom?>><?php echo $nom;?></h3>
 	<h1><?php echo '<font color = "blue">'.$plate[$plateforme].'</font>'?></h1>
 	<br><br>
 	<img src=<?php echo $image; ?> >

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
-    if(isset($_SESSION['pseudo'])){
-        
-    }
+    session_start();
+    
 ?>
 <html>
 <head>
@@ -13,7 +12,7 @@
 <body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../Index.php"><img id="home" src="../Images_CSS/CSS.png"></a>
 				</li>	
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
@@ -86,15 +85,14 @@
         			<option value="8">Xbox</option>
         		</select>
         		&nbsp &nbsp &nbsp | &nbsp &nbsp &nbsp
-               Jeu <form class="formJeu" action="">
-               <input class="formJeu" type="text" placeholder="Tapez votre recherche ici"/>
-               <input id="rechJeu" class="bouton" type="button" value="rechercher"/>      
+               Jeu <form class="formJeu" method="POST" action="critiques.php">
+              <input id="AddC" class="bouton" type="submit" value="Ajouter une Critique"/>      
             	</form>
         	</div>
         	<br>
         	<div class="liste Jeux">
         		<ul>
-        			<li>Test jeu 1</li>
+        			<li id="jeu1">Test jeu 1</li>
         			<li>Test jeu 2</li>
         			<li>Test jeu 3</li>
         		</ul>

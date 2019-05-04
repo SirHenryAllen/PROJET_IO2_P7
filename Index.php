@@ -60,7 +60,7 @@
         		<hr>
         		<br>
             		<?php
-                    require_once "Aux.php";
+                    require_once "Jeux/Selection/Aux.php";
                     $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
                     $rq= 'SELECT * FROM Jeux;';
                     $stmt = $bdd->query($rq);
