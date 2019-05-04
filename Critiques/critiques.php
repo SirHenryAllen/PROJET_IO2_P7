@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    
+    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+    if(isset($_POST['addc'])){
+        if(isset($_SESSION['pseudo'])){
+            header('Location: addCritiques.php');
+        }else{
+            $erreur = "Il vous faut un compte pour publier une critique";
+        }
+    }
 ?>
 <html>
 <head>
@@ -86,13 +93,18 @@
         		</select>
         		&nbsp &nbsp &nbsp | &nbsp &nbsp &nbsp
                Jeu <form class="formJeu" method="POST" action="critiques.php">
-              <input id="AddC" class="bouton" type="submit" value="Ajouter une Critique"/>      
+              <input id="AddC" class="bouton" name="addc" type="submit" value="Ajouter une Critique"/>      
             	</form>
+                <?php
+                    if(isset($erreur)){
+                        echo '<font color="red">'.$erreur.'</font>';
+                    }
+                ?>
         	</div>
         	<br>
         	<div class="liste Jeux">
         		<ul>
-        			<li id="jeu1">Test jeu 1</li>
+        			<li>Test jeu 1</li>
         			<li>Test jeu 2</li>
         			<li>Test jeu 3</li>
         		</ul>
