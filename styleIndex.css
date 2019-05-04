@@ -126,7 +126,7 @@ body > nav a{
 .Acceuil{
 	background-color : yellow;
 	width: 80%;
-	height: 380px;
+	height: 70%;
 	margin-left:10%;
 }
 body > div.Acceuil div{
@@ -137,7 +137,7 @@ body > div.Acceuil div{
 .Sousbloc1{
 	background-color: green;
 	margin-left:1%;
-	height:;
+	height: 70%;
 }
 .Sousbloc1 p{
 	padding-left: 15px;
@@ -146,6 +146,7 @@ body > div.Acceuil div{
 .Sousbloc2{
 	background-color: SlateGray;
 	vertical-align: top;
+	height: 70%;
 }
 .Sousbloc2 p{
 	
