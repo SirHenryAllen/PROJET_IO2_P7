@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -8,7 +9,7 @@
 <body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../../Index.html"><img id="home" src="../../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../../Index.php"><img id="home" src="../../Images_CSS/CSS.png"></a>
 				</li>	
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
@@ -35,8 +36,8 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png">Mon Compte</a>
-				</li>		
+                <li class="list-Moncompte"> <a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
+                </li>   	
 			</ul>
 		</nav>
 		<br/>

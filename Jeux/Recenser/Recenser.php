@@ -42,7 +42,7 @@
 <body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../../Index.html"><img id="home" src="../../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../../Index.php"><img id="home" src="../../Images_CSS/CSS.png"></a>
 				</li>	
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
