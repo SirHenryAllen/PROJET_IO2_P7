@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-	<?php
-		session_start();
-		$bdd = new PDO('mysql:host=localhost;dbname=espace_membres','nadim','Baya1934');
-
-	?>
+<?php
+	session_start();
+	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+	if(isset($_GET['id']) AND $_GET['id'] > 0){
+		$getid = intval($_GET['id']);
+		$requser = $bdd->prepare('SELECT * FROM espace_membres WHERE id = ?');
+		$requser->execute(array($getid));
+		$userinfo = $requser->fetch();
+	}
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -38,7 +43,7 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="#"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
 				</li>		
 			</ul>
 		</nav>
@@ -51,13 +56,23 @@
 			</ul>
 			<hr/>
 			<ul class="debut">
-				<li><h3>Profil de ...</h3></li>
+				<li><h3>Profil de <?php echo $userinfo['pseudo'];?></h3></li>
 			</ul>
 			<hr/>
 			<br/>
 			<div class="desc">
-				
+				Pseudo = <?php echo $userinfo['pseudo']; ?>
+				<br>
+				Mail = <?php echo $userinfo['mail']; ?>
 			</div>
+<?php
+			if(isset($_SESSION['id']) && $userinfo['id'] == $_SESSION['id']){
+?>
+				<a href="#">Editer mon profil</a>
+				<a href="deconnexion.php">Se déconnecter</a>
+<?php
+			}
+?>
 		</div>
 	</body>
 

@@ -2,7 +2,7 @@
 <?php
     $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
     if(isset($_POST['recensement'])){
-        if(isset($_POST['nom']) && isset($_POST['edit']) && isset($_POST['dev']) && isset($_POST['jour']) && isset($_POST['mois']) && isset($_POST['annee']) && isset($_POST['plateforme']) && isset($_POST['genre']) && isset($_POST['description']) && isset($_POST['icone'])){
+        if(!empty($_POST['nom']) && !empty($_POST['edit']) && !empty($_POST['dev']) && !empty($_POST['jour']) && !empty($_POST['mois']) && !empty($_POST['annee']) && !empty($_POST['plateforme']) && !empty($_POST['genre']) && !empty($_POST['description']) && !empty($_POST['icone'])){
             $nom = $_POST['nom'];
             $editeur = $_POST['edit'];
             $developpeur = $_POST['dev'];
@@ -91,7 +91,7 @@
             <h2>Recenser nouveau jeu</h2>
             </thead>
             
-            <div class="test">
+            
             
             
             
@@ -161,21 +161,15 @@
                 <label for="icone">Ajouter lien d'image (JPG, PNG ou GIF | max. 15 Ko) :<br />
                 <input type="text" name="icone"  id="icone" /></label><br />
                 <br>
-<<<<<<< HEAD
-                <label for="description">Ajouter une description (max. 255 caractères) :</label><br />
-                <textarea name="description" id="description"></textarea><br />
-            </form>
-            </div>
-=======
+
                
                 <label for="description">Ajouter une description :<br />
                 <textarea name="description" id="description"></textarea></label><br />
             
->>>>>>> 0d366f12053d899cfcd2f6222b1e0b270763b8a5
             </td>
             </tr>
         
-            </div>
+                    
             </table>
             <input id="recenser" type="submit" name="recensement" value="Recenser">
             </form>

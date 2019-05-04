@@ -4,7 +4,7 @@
 	$bdd=new PDO('mysql:host=localhost;dbname=espace_membres','nadim','Baya1934');
 	if(isset($_POST['formconnexion'])){
 		$pseudoconnect = $_POST['pseudo'];
-		$mdpconnect = password_hash($_POST['mdp']);
+		$mdpconnect = $_POST['mdp'];
 		if(!empty($pseudoconnect) && !empty($mdpconnect)){
 			$requser = $bdd->prepare("SELECT * FROM espace_membres WHERE pseudo = ? AND mdp = ?");
 			$requser->execute(array($pseudoconnect, $mdpconnect));
@@ -97,7 +97,7 @@
 								</label>
 							</td>
 							<td>
-								<input type="text" placeholder="Votre Mot de passe" name="mdp" />
+								<input type="password" placeholder="Votre Mot de passe" name="mdp" />
 							</td>
 						</tr>
 						<tr>
