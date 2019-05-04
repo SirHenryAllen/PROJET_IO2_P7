@@ -4,5 +4,6 @@
 		$req = "SELECT * FROM Jeux";
 		$res = mysqli_query($bdd, $req);
 		return $res;
+		//variante phphmyadmin : $res= $bdd->prepare("SELECT * FROM Jeux");
 	}
 ?>
