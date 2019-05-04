@@ -64,7 +64,7 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"> <a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
 				</li>		
 			</ul>
 		</nav>
@@ -89,30 +89,28 @@
             
             <thead>
             <h2>Recenser nouveau jeu</h2>
-            </thead>
-            
-            
-            
-            
-            
+            </thead> 
+                
                 <tr>
                 <td>
             
             <form method="POST" action="Recenser.php">
-               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Nom : <input class="champ" type="text" name="nom" placeholder="Entrer le nom ici"/>  
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                Nom : <input class="champ" type="text" name="nom" placeholder="Entrer le nom ici"/>  
+                
+               
+                <br>
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                Editeur : <input class="champ" type="text" name="edit" placeholder="Entrer le nom ici"/>  
             
-           
-               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Editeur : <input class="champ" type="text" name="edit" placeholder="Entrer le nom ici"/>  
-            
-               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Développeur : <input class="champ" type="text" name="dev" placeholder="Entrer le nom ici"/>  
+                <br>
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                Développeur : <input class="champ" type="text" name="dev" placeholder="Entrer le nom ici"/>  
             <br>
-               &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-               Date de sortie : <input class="date" type="number" name="jour" placeholder="jour"/>
-               <input class="date" type="number" name="mois" placeholder="mois"/>  
-               <input class="date" type="number" name="annee" placeholder="année"/>  
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                Date de sortie : <input class="date" type="number" name="jour" placeholder="jour"/>
+                <input class="date" type="number" name="mois" placeholder="mois"/>  
+                <input class="date" type="number" name="annee" placeholder="année"/>  
             
             <br>
         	
@@ -171,16 +169,22 @@
         
                     
             </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <input id="recenser" type="submit" name="recensement" value="Recenser">
             </form>
             &nbsp &nbsp
+            <div class = "erreur">
             <?php
                 if(isset($erreur)){
                     echo '<font color="red">'.$erreur.'</font>';
                 }
             ?>
-
+            </div>
         </div>
-       
 </body>
 </html>
