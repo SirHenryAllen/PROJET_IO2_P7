@@ -21,9 +21,9 @@
 						<li><a href="Jeux/Recenser/Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
-				<li class="list-Actus"><a href="Actus/Actus.html">Actus</a>
+				<li class="list-Actus"><a href="#">Articles</a>
 					<ul class="sousliste">
-						<li><a href="#">Toute les news</a></li>
+						<li><a href="Communaute/Article/Article.php">Tous les articles</a></li>
 						
 					</ul>
 				</li>
@@ -31,9 +31,9 @@
 				</li>
 				<li class="list-Forum"><a href="Forum/Forum.html">Forum</a>
 				</li>
-				<li class="list-Communauté"><a href="Communaute/Communauté.html">Communauté</a>
+				<li class="list-Communauté"><a href="#">Communauté</a>
 					<ul class="sousliste">
-						<li><a href="#">Vos Articles</a></li>
+						<li><a href="Communaute/Article/Article.php">Vos Articles</a></li>
 						<li><a href="Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
@@ -55,28 +55,43 @@
         <div class="Acceuil">
         	<span id="Vignetteacceuil">
         		<?php  ?>
-        		<h2>Acceuil</h2>
+        		<h2 id="DernierAct">Dernières Actus du site</h2>
         	</span>
         	<div class="Sousbloc1">
         		<h3>Dernier jeu recensé</h3>
         		<hr>
         		
             		<?php
-                    require_once "Jeux/Selection/Aux.php";
-                    
+                   
                     $rq= 'SELECT * FROM Jeux;';
                     $stmt = $bdd->query($rq);
                     $ligne = $stmt->fetchAll();
-                    echo '<h3><strong>'.$ligne[count($ligne)-1]['nom'].'</strong></h3><br><img src="Jeux/'.$ligne[count($ligne)-1]['image'].'" alt= "imj" width="100px" height="100px"><br><br><a style="color:#470440" href="Jeux/Selection/Selection.php">-> afficher dans Toute la selection...</a>';
+                    echo '<h3><strong>'.$ligne[count($ligne)-1]['nom'].'</strong></h3><img src="Jeux/'.$ligne[count($ligne)-1]['image'].'" alt= "imj" width="100px" height="100px"><br><br><a style="color:#470440" href="Jeux/Selection/Selection.php">-> afficher dans Toute la selection...</a>';
 
                 ?>
         	</div>
         	<div class ="Sousbloc2">
         		<h3>Dernière critique</h3>
         		<hr>
-        		<br>
+        		<?php
+                
+                    $rq= 'SELECT * FROM Critiques;';
+                    $stmt = $bdd->query($rq);
+                    $ligne = $stmt->fetchAll();
+                    echo '<h3><strong>Critique de '.$ligne[count($ligne)-1]['publisher'].' sur '.$ligne[count($ligne)-1]['nom'].'</strong></h3><br><br><a style="color:#470440" href="Critiques/critiques.php">-> afficher dans Critiques...</a>';
+
+                ?>
 
         	</div>
+        	<div class = "Sousbloc3">
+        		<h3>Dernier article</h3>
+        		<hr>
+        		<?php 
+
+        		?>
+        	</div>
+
+
         </div>
 	</body>
 	<footer>

@@ -1,50 +1,47 @@
 <!DOCTYPE html>
-<?php
-    session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
-    if(isset($_POST['addc'])){
-        if(isset($_SESSION['pseudo'])){
-            header('Location: addCritiques.php');
-        }else{
-            $erreur = "Il vous faut un compte pour publier une critique";
-        }
-    }
-?>
+
+	<?php session_start(); 
+	$bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+	?>
+
 <html>
 <head>
+	<meta charset ="utf-8">
+	<title>Article</title>
+</head>
+<head>
 	<meta charset="utf-8">
-	<title>Toute la sélection</title>
-	<link rel="stylesheet" href="styleCritiques.css">
+	<title>Nouvelle critique</title>
+	<link rel="stylesheet" href="styleArticle.css">
 </head>
 <body>
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../Index.php"><img id="home" src="../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../../Index.php"><img id="home" src="../../Images_CSS/CSS.png"></a>
 				</li>	
-				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
 					<ul class="sousliste">
-						<li><a href="../Jeux/Selection/Selection.php">Toute la sélection</a></li>
-						<li><a href="../Jeux/Recenser/Recenser.php">Recenser</a></li>
+						<li><a href="../../Jeux/Selection/Selection.php">Toute la sélection</a></li>
+						<li><a href="../../Jeux/Recenser/Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
 				<li class="list-Actus"><a href="#">Articles</a>
 					<ul class="sousliste">
-						<li><a href="../Communaute/Article/Article.php">Tous vos articles</a></li>
+						<li><a href="Article.php">Tous vos articles</a></li>
 						
 					</ul>
 				</li>
-				<li class="list-Critiques"><a href="critiques.php">Critiques</a>
+				<li class="list-Critiques"><a href="../../Critiques/critiques.php">Critiques</a>
 				</li>
-				<li class="list-Forum"><a href="../Forum/Forum.html">Forum</a>
+				<li class="list-Forum"><a href="../../Forum/Forum.html">Forum</a>
 				</li>
 				<li class="list-Communauté"><a href="#">Communauté</a>
 					<ul class="sousliste">
-						<li><a href="../Communaute/Article/Article.php">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="Article.php">Vos Articles</a></li>
+						<li><a href="critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png"><?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
+				<li class="list-Moncompte"> <a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
 				</li>		
 			</ul>
 		</nav>
@@ -98,7 +95,7 @@
                <hr>
                <br> 
                <form class="formJeu" method="POST" action="critiques.php">
-                <input id="AddC" class="bouton" name="addc" type="submit" value="Ajouter une Critique"/>      
+                <input id="AddC" class="bouton" name="addc" type="submit" value="Ajouter un article"/>      
             	</form>
                 <?php
                     if(isset($erreur)){
@@ -109,16 +106,6 @@
         	<br>
         	<div class="liste Jeux">
         		<hr>
-                <?php
-                    require_once "ajouterLigne.php";
-                    $stmt= $bdd->query('SELECT * FROM Critiques');
-                    $ligne= $stmt->fetchAll();
-                    $gneli= array_reverse($ligne);
-                    foreach($gneli as $a){
-                        afficher_ligneC($a);
-                    }
-                ?>
         	</div>
         </div>
-</body>
 </html>

@@ -37,9 +37,9 @@
 						<li><a href="../Recenser/Recenser.php">Recenser</a></li>
 					</ul>
 				</li>
-				<li class="list-Actus"><a href="Actus.html">Actus</a>
+				<li class="list-Actus"><a href="#">Articles</a>
 					<ul class="sousliste">
-						<li><a href="#">Toute les news</a></li>
+						<li><a href="../../Communaute/Article/Article.php">Tous vos articles</a></li>
 						
 					</ul>
 				</li>
@@ -48,9 +48,9 @@
                 </li>
 				<li class="list-Forum"><a href="Forum.html">Forum</a>
 				</li>
-				<li class="list-Communauté"><a href="Communauté.html">Communauté</a>
+				<li class="list-Communauté"><a href="#">Communauté</a>
 					<ul class="sousliste">
-						<li><a href="#">Vos Articles</a></li>
+						<li><a href="../../Communaute/Article/Article.php">Vos Articles</a></li>
 						<li><a href="../../Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>

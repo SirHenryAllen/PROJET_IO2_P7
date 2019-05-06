@@ -1,20 +1,12 @@
 @charset "utf-8";
+
 html{
 	margin : 0;
 	padding : 0;
-	background: url(Images_CSS/background.jpg) no-repeat center fixed;
+	background: url(../../Images_CSS/backgroundArticles.jpg) no-repeat center fixed;
 	background-size : cover;
 }
-header{
-	color : green;
-	background-color : none;
-	text-align : center;
-}
-img.head{
-	width : 120px;
-	height : 78px;
-	padding-left: 47%;
-}
+
 a {
 	text-decoration : none;
 }
@@ -23,15 +15,6 @@ body{
 	margin: 0px;
 	padding: 0px;
 
-}
-footer p{
-	color : SlateGray;
-	text-align : right;
-	font-size : x-small;
-}
-form.formulaire{
-	text-align : right;
-	padding-top:15px;
 }
 body > nav> ul{
 	margin : 0px;
@@ -60,11 +43,6 @@ nav > ul::after{
 .sousliste{
 	display : none;
 }
-.sousliste li a:hover{
-	color: black;
-	background-color:#F8032F;
-	border : 1px solid black;
-}
 body > nav > ul li:hover .sousliste{
 	display: inline-block;
 	position: absolute;
@@ -77,9 +55,10 @@ nav ul li:hover{
 	background-color : #F8032F; /*couleur de la section de el barre*/
 	color: white;
 }
-.sousliste li{
-	border-bottom : 1px solid #F8032F;
-	width: 100%;
+.sousliste li a:hover{
+	background-color: red;
+	color: black;
+	border: 1px solid black;
 }
 .sousliste li a{
 	font-size: 13px;
@@ -89,9 +68,9 @@ nav ul li:hover{
 	padding: 15px 10px;
 }
 .sousliste li a:hover{
-	background-color: red;
 	color: black;
-	border: 1px solid black;
+	background-color:#F8032F;
+	border : 1px solid black;
 }
 body > nav{
 	width : 100%;
@@ -110,7 +89,6 @@ body > nav a{
 	float: left;
 
 }
-
 #pdp{
 	width: 20px;
 	height:20px ;
@@ -119,54 +97,50 @@ body > nav a{
 }
 #home{
 	width: 30px;
-	height:  20px;
+	height:20px ;
 	margin-right: 10px;
 
 }
-.Acceuil{
-	background-color : ;
+div.form > form.formulaire{
+	text-align : right;
+	padding-top:15px;
+}
+
+
+
+body > div.Selection{
+	background-color : #63001a;
 	width: 80%;
 	height: 70%;
-	margin-left:10%;
+	margin-top: 100px;
+	margin-left: 10%;
 }
-body > div.Acceuil div{
-	display: inline-block;
-	width: 49%;
-	height: 300px;
+body >div> h2{
+	text-align : center;
 }
-.Sousbloc1{
-	height: 80%;
-	background-color: green;
-	margin-left:1%;
+body >div.Selection form {
+	text-align : left;
 }
-.Sousbloc1 p{
-	padding-left: 15px;
-	padding-bottom : 20px;
+.Acceuil div.listej {
+	color: #EEB600;
+	width: 90%;
+	margin-left : 5%;
+	padding: 10px 0px;
+	height: 70%;
 }
-.Sousbloc2{
-	height: 80%;
-	background-color: SlateGray;
-	vertical-align: top;
+.Acceuil div.listej ul{
+	text-align : center
+	vertical-align: left;
+	margin-left: 20%;
 }
-.Sousbloc3 {
-	height: 80%;
-	background-color: red;
-	margin-top: 3px;
+.date {
+	width: 50px;
 }
-.Sousbloc2 p{
-	
-	padding-left: 15px;
+#AddC {
+	float: right;
+	margin-bottom: 20px;
+	margin-right: 20px;
 }
-#Vignetteacceuil h4{
-	margin : 20px;
-	padding-top: 20px;
-}
-.Acceuil {
+#recenser  {
 	text-align: center;
-}
-#DernierAct{
-	padding: 0 5px;
-	background-color:#51525b;
-	color: #6b2e4e;
-	
 }
