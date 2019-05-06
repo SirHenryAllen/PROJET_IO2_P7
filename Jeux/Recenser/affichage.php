@@ -57,7 +57,7 @@ function afficher_ligne(&$ligne){
 	<h3 id=<?=$nom?>><?php echo $nom;?></h3>
 	<h1><?php echo '<font color = "blue">'.$plate[$plateforme].'</font>'?></h1>
 	<br><br>
-	<img src=<?php echo $image; ?> >
+	<img src="<?php echo $image; ?>" height="15%" width="15%" >
 <?php
 	echo "<p> Edité par: ".$editeur.".</p>";
 	echo "<p> Developpé par: ".$developpeur.".</p>";

@@ -1,45 +1,40 @@
 # Projet IO2
 
-*L'idée du projet est de créer un site collaboratif ayant pour thème le jeu vidéo.*
+*Le principe de ce site web, ayant pour thème le jeu vidéo, est de pouvoir, de manière collaborative, recencer tout type de jeu vidéo pour ainsi posséder une bibliographie qui sera une base de donnée interactive pour les utilisateurs du site (ajout de critiques et de notes sur chaque jeu recencé). Puis, dans la limite du temps restant, nous espérons implémenter un système de forum/tchat qui permettra aux utilisateurs de communiquer entre eux.*
 
 
 **Les grands axes du projet seront :**
- 1. La mise en page et l'ergonomie du site.
- 2. La partie utilisateur.
- 3. La partie serveur.
- 4. L'organisation des différentes rubriques relatives au jeu vidéo.
+ 1. La réalisation d'un index renvoyant vers les différentes catégories du cite.
+ 2.	La création d'un système de compte (pour devenir utilisateur du site).
+ 3. La mise en place d'un système de recensement (pour ajouter des jeux à la base de donnée).
+ 4. La création d'une catégorie permettant de retrouver tous les jeux recensés.
+ 5. La mise en place d'un système permettant aux utilisateur de faire des critiques sur les jeux recensés.
 
 
-## La mise en page
-	- Nous utiliserons le langage HTML combiné à du CSS (le javascript peut aussi, dans un second temps, être envisagé).
+## L'index
+	L'index est au centre du site et toutes les catégories s'articulent autour de lui. Elles y sont accessibles via un menu déroulant qui est également commun à toutes les pages du site. 
+	**Ce menu déroulant est constitué de gauche à droite :**
+		- D'un bouton de retour à l'index.
+		- D'une catégorie "Jeux" proposant la page de sélection (détaillée dans la partie 4) ainsi que la page de recencement (détaillée dans la partie 3).
+		- D'un lien vers la page "Critiques" (détaillée dans la partie 5).
+		- D'un lien vers le menu de création de compte ou plus généralement l'espace utilisateur.
+	Enfin, au centre de l'index, est présent un tableau informant de la dernière critique ainsi que du dernier jeu recensé sur le site.
 
 
-
-## La partie utilisateur
-	- Il sera nécessaire que chaque nouvel arrivant sur le site puisse s'enregistrer ou se connecter.
-	- Il faudra également que chaque utilisateur puisse accéder à une page sur laquelle il pourra modifier
- 	ses informations (pseudonyme, image de profil, mot de passe, etc.).
-	- Un niveau de restriction sera nécessaire pour réglementer l'accès et les droits dans chaque partie du site.
- 		- Le niveau de restriction pourra évoluer (automatiquement ou via une action d'un admin) en fonction de l'activité de chaque utilisateur.
+## Partie utilisateur (enregistrement et inscription)
+	Comme expliqué dans la partie 1 : dans le menu déroulant, commun à toutes les pages du site, se trouve à droite un bouton ramenant à la page utilisateur. Il est indiqué par "Mon compte" si l'utilisateur n'est pas connecté et par son pseudonyme, s'il l'est.
 
 
-## La partie serveur
-	- Les requêtes seront gérées en PHP
+## Le recensement
+	Le recensement permet à n'importe qui d'enregistrer un nouveau jeu avec ses différentes caractéristiques dans la base de donnée.
 
 
-## L'organisation des rubriques
-	- Les rubriques dédiées au jeu vidéo se décomposeront en plusieurs partie :
-		- Recencement de tous les jeux existants
-			- Avec informations relatives à chaque jeu (nom, date de sortie, plateforme, synopsis, etc.).
-			- Rencement et ajout d'information effectué par les utilisateurs vérifiés.
-		- Critique de jeux
-			- Chaque utilisateur pourra donner une note et un avis sur le jeu sous forme de petit article.
-			- Les jeux faisant l'objet des critiques devront avoir été d'abord rencencé avant de pouvoir être sélectionnés.
-		- Formum
-			- Avec petites annonces, relatives au milieu du JV, sous forme de topic.
-			- Espace de tchat.
+## La sélection
+	Cette page permet de retrouver les jeux recensés avec leurs descriptions. C'est également via cette interface que les utilisateurs peuvent ajouter leur critique sur un jeu. 
 
 
+## Remarques
+	- Pour réaliser nos bases de données, nous avons utilisé l'outils *php my admin*, par soucis de gain de temps et d'efficacité.
 
 
 

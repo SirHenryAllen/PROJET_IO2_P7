@@ -1,5 +1,23 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    $bdd= new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+    if(isset($_POST['rech'])){
+        if(!empty($_POST['recherche'])){
+            $reqrech = $bdd->prepare('SELECT * FROM Jeux WHERE nom = ?');
+            $reqrech->execute(array($_POST['recherche']));
+            $gameexist = $reqrech->rowCount();
+            if($gameexist == 1){
+                $destination= $_POST['recherche'];
+                header('Location: Selection.php#'.$destination); // fonctionne pas :/
+            }else{
+                $erreur= "Nous n'avons trouvé aucune entrée du catalogue correspendant à votre recherche :/";
+            }
+        }else{
+            $erreur= "Veuillez entrer quelque chose...";
+        }
+    }
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -22,7 +40,7 @@
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
 					<ul class="sousliste">
 						<li><a href="#">Toute les news</a></li>
-						<li><a href="#">Articles et Chroniques récentes</a></li>
+						
 					</ul>
 				</li>
                 <li class="list-Critiques"><a href="../../Critiques/critiques.php">Critiques</a>
@@ -33,7 +51,7 @@
 				<li class="list-Communauté"><a href="Communauté.html">Communauté</a>
 					<ul class="sousliste">
 						<li><a href="#">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="../../Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
                 <li class="list-Moncompte"> <a href="../../MonCompte/monCompte.php"><img id="pdp" src="../../Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
@@ -45,19 +63,15 @@
 		<br/>
 		<br/>
 		<br/>
-		<div class="form">          	
-            <form class="formulaire" action="">
-               <input class="champ" type="text" placeholder="Tapez votre recherche ici"/>
-               <input id="rechbouton" class="bouton" type="button" value="rechercher"/>      
-            </form>
-        </div>
+		
         <div class="Selection">
         	<h2>Toute la sélection</h2>
-               <form class="formulaire" action="">
-               <input class="champ" type="text" placeholder="Tapez votre recherche ici"/>
-               <input id="rechbouton" class="bouton" type="button" value="rechercher"/>      
+               <form class="formulaire" method="POST" action="Selection.php">
+               <input class="champ" type="text" name="recherche" placeholder="Tapez votre recherche ici"/>
+               <input id="rechbouton" class="bouton" type="submit" name="rech" value="Rechercher"/>   
+               <div align="right"><?php if(isset($erreur)){ echo '<font color="red">'.$erreur.'</font>'; } ?></div>   
             </form>
-        	<h3>Filtrer par : </h3>
+        	<h3 style="margin-left:2%">Filtrer par : </h3>
         	<br>
         	<div class="Filtres Jeux" style="clear:both">
         		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -94,7 +108,8 @@
                     $rq= 'SELECT * FROM Jeux;';
                     $stmt = $bdd->query($rq);
                     $ligne = $stmt->fetchAll();
-                    foreach($ligne as $a){
+                    $gneli = array_reverse($ligne);
+                    foreach($gneli as $a){
                         afficher_ligne($a);
                     }
 

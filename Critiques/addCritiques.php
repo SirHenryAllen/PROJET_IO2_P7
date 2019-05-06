@@ -2,6 +2,26 @@
 <?php
     session_start();
     $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+	if(isset($_POST['ajout'])){    
+	    if(isset($_SESSION['pseudo'])){
+	    	if(!empty($_POST['nom']) && !empty($_POST['description']) && !empty($_POST['Note'])){
+	    		$reqJeux= $bdd->prepare('SELECT * FROM Jeux WHERE nom = ?');
+	    		$reqJeux->execute(array($_POST['nom']));
+	    		$gameExists= $reqJeux->rowCount();
+	    		if($gameExists == 1){
+	    			$newCritique= $bdd->prepare('INSERT INTO Critiques(id, nom, description, Note, publisher) VALUES(?,?,?,?,?)');
+	    			$newCritique->execute(array(null, $_POST['nom'], $_POST['description'], $_POST['Note'], $_SESSION['pseudo']));
+	    			$critiqueAdded= "Votre Critique a bien été ajouté";
+	    		}else{
+	    			$erreur= "Le jeu dont vous venez d'emettre une critique n'a pas été recensé";
+	    		}
+	    	}else{
+	    		$erreur= "Certains champs sont incomplet";
+	    	}
+	    }else{
+	    	$erreur= "Assurez-vous d'être connectés avant de poster un avis";
+	    }
+	}
 ?>
 
 <html>
@@ -25,7 +45,7 @@
 				<li class="list-Actus"><a href="../Actus/Actus.html">Actus</a>
 					<ul class="sousliste">
 						<li><a href="#">Toute les news</a></li>
-						<li><a href="#">Articles et Chroniques récentes</a></li>
+						
 					</ul>
 				</li>
 				<li class="list-Critiques"><a href="critiques.php">Critiques</a>
@@ -35,7 +55,7 @@
 				<li class="list-Communauté"><a href="../Communaute/Communauté.html">Communauté</a>
 					<ul class="sousliste">
 						<li><a href="#">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
 				<li class="list-Moncompte"> <a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
@@ -62,15 +82,15 @@
 
             <h2>Ajouter une nouvelle critique</h2>
             
-            <form method="POST" action="Recenser.php">
+            <form method="POST" action="addCritiques.php">
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                Titre : <input class="champ" type="text" name="nom" placeholder="Entrer le titre ici"/>  
+                Titre du jeu: <input class="champ" type="text" name="nom" placeholder="Entrer le titre ici"/>  
                 
                 <br>
                 <br>
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                <label for="description">Ajouter une description :<br />
+                <label for="description">Redigez votre avis :<br />
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
                 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   
                 <textarea name="description" id="description"></textarea></label><br />        
@@ -115,7 +135,9 @@
             <div class = "erreur">
             <?php
                 if(isset($erreur)){
-                    echo '<font color="red">'.$erreur.'</font>';
+                    echo '<div align="center"><font color="red">'.$erreur.'</font></div>';
+                }else if(isset($critiqueAdded)){
+                	echo '<div align="center"><font color="black">'.$critiqueAdded.'</font></div>';
                 }
             ?>
             </div>

@@ -44,8 +44,8 @@
                         <html>
                         <br>
                         <div class=jselec>
-                            <h2><strong><?=$nom?></strong></h2>
-                            <img src="<?=$image?>" alt= "imj">
+                            <h2 id="#<?=$nom?>"><strong><?=$nom?></strong></h2>
+                            <div align="center"><img src="<?=$image?>" alt= "imj" width="200px" height="200px"></div>
                             <p><strong>Plateforme de sortie : </strong><?php echo $plate[$plateforme] ?></p>
                             <br>
 

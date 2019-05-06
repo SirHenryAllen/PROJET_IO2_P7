@@ -48,7 +48,7 @@
 				<li class="list-Actus"><a href="Actus.html">Actus</a>
 					<ul class="sousliste">
 						<li><a href="#">Toute les news</a></li>
-						<li><a href="#">Articles et Chroniques récentes</a></li>
+						
 					</ul>
 				</li>
 				<li class="list-Critiques"><a href="../Critiques/critiques.php">Critiques</a>
@@ -58,7 +58,7 @@
 				<li class="list-Communauté"><a href="Communauté.html">Communauté</a>
 					<ul class="sousliste">
 						<li><a href="#">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="../Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
 				<li class="list-Moncompte"><a href="#"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>

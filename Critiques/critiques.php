@@ -31,7 +31,7 @@
 				<li class="list-Actus"><a href="../Actus/Actus.html">Actus</a>
 					<ul class="sousliste">
 						<li><a href="#">Toute les news</a></li>
-						<li><a href="#">Articles et Chroniques récentes</a></li>
+						
 					</ul>
 				</li>
 				<li class="list-Critiques"><a href="critiques.php">Critiques</a>
@@ -44,7 +44,7 @@
 						<li><a href="#">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="../MonCompte/monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png"><?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
 				</li>		
 			</ul>
 		</nav>
@@ -92,22 +92,32 @@
         			<option value="8">Xbox</option>
         		</select>
         		&nbsp &nbsp &nbsp | &nbsp &nbsp &nbsp
-               Jeu <form class="formJeu" method="POST" action="critiques.php">
-              <input id="AddC" class="bouton" name="addc" type="submit" value="Ajouter une Critique"/>      
+               Jeu
+               <br>
+               <br>
+               <hr>
+               <br> 
+               <form class="formJeu" method="POST" action="critiques.php">
+                <input id="AddC" class="bouton" name="addc" type="submit" value="Ajouter une Critique"/>      
             	</form>
                 <?php
                     if(isset($erreur)){
-                        echo '<font color="red">'.$erreur.'</font>';
+                        echo '<div align="center"><font color="red">'.$erreur.'</font></div>';
                     }
                 ?>
         	</div>
         	<br>
         	<div class="liste Jeux">
-        		<ul>
-        			<li>Test jeu 1</li>
-        			<li>Test jeu 2</li>
-        			<li>Test jeu 3</li>
-        		</ul>
+        		<hr>
+                <?php
+                    require_once "ajouterLigne.php";
+                    $stmt= $bdd->query('SELECT * FROM Critiques');
+                    $ligne= $stmt->fetchAll();
+                    $gneli= array_reverse($ligne);
+                    foreach($gneli as $a){
+                        afficher_ligneC($a);
+                    }
+                ?>
         	</div>
         </div>
 </body>

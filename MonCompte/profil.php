@@ -18,7 +18,7 @@
 	<body class="barre">
 		<nav>
 			<ul>
-				<li class="list-home"><a href="../Index.html"><img id="home" src="../Images_CSS/CSS.png"></a>
+				<li class="list-home"><a href="../Index.php"><img id="home" src="../Images_CSS/CSS.png"></a>
 				</li>	
 				</li>
 				<li class="list-Jeux"><a href="#">Jeux</a>
@@ -40,10 +40,10 @@
 				<li class="list-Communauté"><a href="Communauté.html">Communauté</a>
 					<ul class="sousliste">
 						<li><a href="#">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="../Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
-				<li class="list-Moncompte"><a href="monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png">Mon Compte</a>
+				<li class="list-Moncompte"><a href="monCompte.php"><img id="pdp" src="../Images_CSS/pdp.png"><?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
 				</li>		
 			</ul>
 		</nav>
@@ -68,8 +68,9 @@
 <?php
 			if(isset($_SESSION['id']) && $userinfo['id'] == $_SESSION['id']){
 ?>
-				<a href="#">Editer mon profil</a>
-				<a href="deconnexion.php">Se déconnecter</a>
+				<div id="edit" align="center"><a href="#">Editer mon profil</a>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<a href="deconnexion.php">Se déconnecter</a></div>
 <?php
 			}
 ?>

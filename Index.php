@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php session_start(); 
+	  $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+?>
 <html>
 	<head>
 		<meta charset ="utf-8">
@@ -22,7 +24,7 @@
 				<li class="list-Actus"><a href="Actus/Actus.html">Actus</a>
 					<ul class="sousliste">
 						<li><a href="#">Toute les news</a></li>
-						<li><a href="#">Articles et Chroniques récentes</a></li>
+						
 					</ul>
 				</li>
 				<li class="list-Critiques"><a href="Critiques/critiques.php">Critiques</a>
@@ -32,7 +34,7 @@
 				<li class="list-Communauté"><a href="Communaute/Communauté.html">Communauté</a>
 					<ul class="sousliste">
 						<li><a href="#">Vos Articles</a></li>
-						<li><a href="#">Vos Critiques</a></li>
+						<li><a href="Critiques/critiques.php">Vos Critiques</a></li>
 					</ul>
 				</li>
 				<li class="list-Moncompte"> <a href="MonCompte/monCompte.php"><img id="pdp" src="Images_CSS/pdp.png"> <?php if (isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } else { echo "Mon Compte"; } ?> </a>
@@ -58,16 +60,14 @@
         	<div class="Sousbloc1">
         		<h3>Dernier jeu recensé</h3>
         		<hr>
-        		<br>
+        		
             		<?php
                     require_once "Jeux/Selection/Aux.php";
-                    $bdd = new PDO('mysql:host=localhost;dbname=espace_membres;charset=utf8','nadim','Baya1934');
+                    
                     $rq= 'SELECT * FROM Jeux;';
                     $stmt = $bdd->query($rq);
                     $ligne = $stmt->fetchAll();
-                    foreach($ligne as $a){
-                        afficher_ligne($a); break;
-                    }
+                    echo '<h3><strong>'.$ligne[count($ligne)-1]['nom'].'</strong></h3><br><img src="Jeux/'.$ligne[count($ligne)-1]['image'].'" alt= "imj" width="100px" height="100px"><br><br><a style="color:#470440" href="Jeux/Selection/Selection.php">-> afficher dans Toute la selection...</a>';
 
                 ?>
         	</div>

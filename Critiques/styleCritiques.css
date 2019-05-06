@@ -109,15 +109,19 @@ div.form > form.formulaire{
 body > div.Selection{
 	background-color : #6b00b3;
 	width: 80%;
-	height: 380px;
+	height: 70%;
 	margin-top: 100px;
 	margin-left: 10%;
 }
 body >div.Selection h2{
 	text-align : center;
 }
+body >div.Selection h3{
+	margin-left: 2%;
+}
 body >div.Selection form {
 	text-align : right;
+	margin-right: 5%;
 }
 .Acceuil div.listej {
 	background-image : url("../Images_CSS/catalogue.png");
